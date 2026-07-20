@@ -2,9 +2,9 @@
 name: plex-recommendations
 description: >
   Multi-genre movie recommendation system that analyzes your Plex library
-  and personal ratings to suggest movies you'll actually enjoy. Uses
-  Wikipedia's film genre taxonomy for cross-genre or genre-specific recommendations.
-  Supports all 15+ genres in your library.
+  and personal ratings to suggest movies you'll actually enjoy. Supports
+  both general recommendations (across all genres) and genre-specific 
+  recommendations (within a single genre and its subgenres).
 version: 2.1.0
 author: Hermes
 tags: [media, plex, recommendations, multi-genre, film-taxonomy]
@@ -44,32 +44,57 @@ Run `python3 generate_profile.py` to compute fresh preference weights. Current k
 
 See `profiles.json` for the full profile with all genres, rating adjustments, and Plex-to-Wikipedia genre mappings.
 
-## Recommendation Modes
+## Two Recommendation Modes
 
-### Mode 1: Cross-Genre (default)
+There are **two modes** for generating recommendations. The mode is determined by the user's request.
 
-When you say **"recommend movies"**, **"give me movie recommendations"**, or similar general requests:
+### Mode 1: Cross-Genre (General / Broad)
 
-The system searches across **all top genres** in your library, weighted by preference. It:
-1. Loads the top 6 genres from `profiles.json` by weight
-2. Searches each genre for highly-rated movies
-3. Filters out your library + watched list
-4. Returns ranked recommendations across genres
+**Use when:** User makes a general request for recommendations without specifying a genre.
 
-This is the default v2 behavior — broad recommendations from your favorite genres.
+**User prompts that trigger this mode:**
+- "Recommend movies"
+- "Give me some movie recommendations"
+- "Recommend me something to watch"
+- "What should I watch?"
+- Any general request without a genre keyword
 
-### Mode 2: Genre-Specific
+**Behavior:**
+1. Loads the top 6 genres from `profiles.json` by preference weight
+2. For each genre, searches the web for highly-rated movies
+3. Scores candidates by normalized genre weight + recency bonus
+4. Filters out everything in the user's Plex library, Vuze, and watched list
+5. Returns ranked recommendations across all genres
 
-When you say **"recommend [genre] movies"** (e.g. **"recommend horror movies"**):
+This is the **default** behavior — broad recommendations from your favorite genres.
 
-The system restricts recommendations to **that specific genre and its Wikipedia subgenres**. It:
-1. Maps the requested genre to Wikipedia's taxonomy
-2. Gets all subgenres for that genre (e.g. Horror → Slasher, Found Footage, Monster, etc.)
-3. Searches only those genres for highly-rated movies
-4. Filters out your library + watched list
-5. Returns ranked recommendations focused on that genre
+### Mode 2: Genre-Specific (Narrow / Targeted)
 
-**Usage:** Any genre from your library — Horror, Action, Comedy, Thriller, Sci-Fi, Drama, etc.
+**Use when:** User explicitly names a genre.
+
+**User prompts that trigger this mode:**
+- "Recommend horror movies"
+- "I'm in the mood for action"
+- "What good comedies are out?"
+- "Recommend me some thrillers"
+- Any request that includes a genre keyword
+
+**Behavior:**
+1. Parses the requested genre from the user's prompt
+2. Loads Wikipedia's film genre taxonomy (`plex_to_wikipedia_genres.json`)
+3. Finds all Wikipedia subgenres for that genre
+4. Searches only those genres (the main genre + its subgenres)
+5. Filters out library, Vuze, and watched titles
+6. Returns ranked recommendations focused on that genre
+
+**Examples of genre-specific searches:**
+
+| User says | Genres searched |
+|---|---|
+| "recommend horror" | Horror + Slasher, Found Footage, Monster, Zombie, etc. |
+| "recommend action" | Action + Superhero, Spy, Martial Arts, Disaster, etc. |
+| "recommend comedy" | Comedy + Romantic Comedy, Action Comedy, Black Comedy, etc. |
+| "recommend sci-fi" | Science Fiction + Cyberpunk, Dystopian, Space Opera, etc. |
 
 ## How It Works
 
@@ -114,7 +139,7 @@ python3 generate_recommendations.py --count 10
 python3 generate_recommendations.py --count 10 --genre Horror
 ```
 
-Both modes:
+Both modes follow this flow:
 1. Load `profiles.json` for genre weights
 2. Load `plex_to_wikipedia_genres.json` for genre taxonomy
 3. Load library titles from `cache/movies.xml` and `cache/tv.xml` to filter
@@ -163,21 +188,6 @@ When generating recommendations, EXCLUDE:
 - `disliked` — user didn't enjoy it and should avoid similar (demotes genre -1)
 - `meh` — user had no strong opinion (slight boost +0.5)
 - `couldn't_finish` — user couldn't finish it (strongly demotes genre -2)
-
-### Recommendation Logic
-
-**Cross-Genre Mode:**
-- Loads top 6 genres from `profiles.json` by weight
-- Searches each genre for highly-rated movies
-- Scores by normalized genre weight + recency bonus
-- Deduplicates and returns top N
-
-**Genre-Specific Mode:**
-- Maps requested genre to Wikipedia taxonomy
-- Gets all subgenres (e.g. Horror → Slasher, Found Footage, Monster, etc.)
-- Searches only those genres
-- Scores by genre weight
-- Deduplicates and returns top N
 
 ## Marking a Movie as Watched
 
