@@ -5,17 +5,17 @@ description: >
   and personal ratings to suggest movies you'll actually enjoy. Supports
   both general recommendations (across all genres) and genre-specific 
   recommendations (within a single genre and its subgenres).
-version: 2.1.0
+version: 2.0.0
 author: Hermes
 tags: [media, plex, recommendations, multi-genre, film-taxonomy]
 ---
 
-# Plex Recommendations v2.1
+# Plex Recommendations v2.0
 
 ## Connection Details
 
 Plex server: `http://10.0.0.130:32400`
-API token: stored in `~/.hermes/profiles/aether/api_keys/plex.txt`
+API token: `~/.hermes/profiles/aether/api_keys/plex.txt`
 Library sections: Movies (section 9), TV Shows (section 2)
 - **DO NOT scan Vuze (section 5)** — it is a temporary staging area where movies sit until the user decides whether to promote them to the main libraries.
 

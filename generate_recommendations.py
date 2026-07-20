@@ -8,20 +8,32 @@ Usage:
 Modes:
   --genre ACTION   Search only within Action and its subgenres
   --genre          (omitted)          Search across all genres weighted by profile
+
+Portable: all paths resolve relative to this script's location via os.path.dirname.
+When run inside the Hermes agent, web_search is available automatically.
+When run standalone, it logs the profile/genres but cannot perform web searches.
 """
 import json
 import sys
 import os
 import xml.etree.ElementTree as ET
 
-# Add skill dir to path so we can import our helpers
+# Resolve paths relative to this script — portable across machines
 SKILL_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, SKILL_DIR)
 
 def web_search(query, limit=5):
-    """Search the web for movie recommendations."""
-    from hermes_tools import web_search as _ws
-    return _ws(query, limit=limit)
+    """Search the web for movie recommendations.
+    
+    Uses the agent's built-in web_search tool when available.
+    Falls back gracefully when run standalone (returns empty results with a warning).
+    """
+    try:
+        from hermes_tools import web_search as _ws
+        return _ws(query, limit=limit)
+    except ImportError:
+        # Running standalone outside the agent — log a warning and return empty
+        print(f"  [INFO] hermes_tools not available (web_search unavailable); skipping search for: {query}", file=sys.stderr)
+        return {"data": {"web": []}}
 
 def load_profile():
     """Load the preference profile."""
@@ -78,14 +90,12 @@ def get_genre_subgenres(target_genre, genre_mapping):
     Get all Wikipedia subgenres for a target genre.
     Returns list of subgenre strings.
     """
-    mapped = load_genre_mapping()
-    summary = mapped.get("summary_by_super_genre", {})
+    summary = genre_mapping.get("summary_by_super_genre", {})
     
     target_lower = target_genre.lower()
     subgenres = []
     for super_key, data in summary.items():
         if super_key.lower() == target_lower:
-            # This is the target genre's entry
             # Get all Plex genres mapped to this super-genre
             plex_genres = data.get("plex_genres", [])
             # Also get the wikipedia_genres field
@@ -95,7 +105,7 @@ def get_genre_subgenres(target_genre, genre_mapping):
             break
     
     # Also check the mapping directly
-    for plex_genre, entry in mapped.get("genre_mapping", {}).items():
+    for plex_genre, entry in genre_mapping.get("genre_mapping", {}).items():
         if entry.get("wikipedia_super_genre", "").lower() == target_lower:
             if entry.get("wikipedia_genre") and entry["wikipedia_genre"] not in subgenres:
                 subgenres.append(entry["wikipedia_genre"])
@@ -194,10 +204,10 @@ def deduplicate(candidates):
 
 def get_matching_library_titles(target_genre, genre_mapping):
     """Find library titles that match this genre."""
-    matching = []
     summary = genre_mapping.get("summary_by_super_genre", {})
     
     target_lower = target_genre.lower()
+    matching = []
     for super_key, data in summary.items():
         if super_key.lower() == target_lower:
             matching.extend(data.get("plex_genres", []))
@@ -335,6 +345,7 @@ def main():
         all_candidates = filter_excluded(all_candidates, excluded)
         all_candidates = deduplicate(all_candidates)
         top_candidates = all_candidates[:args.count]
+        final_candidates = all_candidates
         
         # Build recommendations
         recommendations = []

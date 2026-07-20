@@ -8,11 +8,12 @@ This is the core of v2 — multi-genre recommendations instead of sci-fi only.
 Usage: python3 generate_profile.py [--output profiles.json]
 """
 import json
+import os
 import sys
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 
-SKILL_DIR = "/Users/trey/.hermes/profiles/aether/skills/media/plex-recommendations"
+SKILL_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def load_genre_mapping():
     """Load the Plex-to-Wikipedia genre mapping."""

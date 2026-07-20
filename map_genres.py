@@ -6,11 +6,12 @@ Produces a JSON file mapping every Plex genre tag to the canonical film genre
 hierarchy, so future recommendation scripts can weight genres properly.
 """
 import json
+import os
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 
-SKILL_DIR = "/Users/trey/.hermes/profiles/aether/skills/media/plex-recommendations"
-CACHE_DIR = f"{SKILL_DIR}/cache"
+SKILL_DIR = os.path.dirname(os.path.abspath(__file__))
+CACHE_DIR = os.path.join(SKILL_DIR, "cache")
 
 # Wikipedia Film/TV Genre Taxonomy (from List_of_genres)
 # Structure: dict where keys are super-genres and values are lists of subgenre strings
