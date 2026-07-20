@@ -20,6 +20,8 @@ import xml.etree.ElementTree as ET
 
 # Resolve paths relative to this script — portable across machines
 SKILL_DIR = os.path.dirname(os.path.abspath(__file__))
+DVDS_CACHE = os.path.join(SKILL_DIR, "cache", "dvds_releases.json")
+
 
 def web_search(query, limit=5):
     """Search the web for movie recommendations.
@@ -234,6 +236,176 @@ def get_matching_library_titles(target_genre, genre_mapping):
     matching = list(set(matching))[:3]
     return matching
 
+
+def load_dvds_releases():
+    """
+    Load dvds_releases.json cache or scrape if missing/stale.
+    Returns list of movie dicts with title, imdb, mpaa, genres.
+    """
+    cache_path = os.path.join(SKILL_DIR, "cache", "dvds_releases.json")
+    
+    # Check if cache exists and is less than 7 days old
+    if os.path.exists(cache_path):
+        import time
+        file_age = time.time() - os.path.getmtime(cache_path)
+        if file_age < 7 * 86400:  # 7 days
+            try:
+                with open(cache_path, "r") as f:
+                    data = json.load(f)
+                # Use merged_releases if available, otherwise fall back to old format
+                if "merged_releases" in data:
+                    movies = data["merged_releases"]
+                    print(f"  Loaded {len(movies)} movies from dvds_releases cache", file=sys.stderr)
+                    return movies
+                else:
+                    # Old format with separate lists
+                    movies = data.get("digital_releases", []) + data.get("dvd_releases", [])
+                    print(f"  Loaded {len(movies)} movies from dvds_releases cache (legacy format)", file=sys.stderr)
+                    return movies
+            except (json.JSONDecodeError, FileNotFoundError):
+                pass
+    
+    # Cache missing or stale - scrape fresh data
+    print("  No valid cache found, scraping dvdsreleasedates.com...", file=sys.stderr)
+    
+    # Import the scraper module (portable)
+    scraper_path = os.path.join(SKILL_DIR, "scrape_dvds_releases.py")
+    if not os.path.exists(scraper_path):
+        print("  [WARN] scrape_dvds_releases.py not found, skipping dvds source", file=sys.stderr)
+        return []
+    
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("scraper", scraper_path)
+        scraper = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(scraper)
+        
+        # Run the scraper
+        digital = scraper.scrape_digital_releases()
+        dvd = scraper.scrape_dvd_releases()
+        merged = scraper.merge_digital_and_dvd(digital, dvd)
+        
+        # Save cache
+        cache_data = {
+            "source": "dvdsreleasedates.com",
+            "merged_releases": merged,
+            "digital_count": len(digital),
+            "dvd_count": len(dvd),
+            "merged_count": len(merged),
+        }
+        os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+        with open(cache_path, "w") as f:
+            json.dump(cache_data, f, indent=2)
+        
+        print(f"  Cached {len(merged)} dvds releases with genre data", file=sys.stderr)
+        return merged
+    except Exception as e:
+        print(f"  [WARN] Failed to scrape dvds releases: {e}", file=sys.stderr)
+        return []
+
+
+def get_dvds_release_candidates(genre_filter=None, count_needed=10, excluded_titles=None):
+    """
+    Get candidate movies from dvdsreleasedates.com cache.
+    
+    Uses actual genre data scraped from dvdsreleasedates.com genre pages.
+    If genre_filter is provided, filters to movies that match that genre.
+    
+    Returns list of candidate dicts.
+    """
+    if excluded_titles is None:
+        excluded_titles = set()
+    
+    movies = load_dvds_releases()
+    candidates = []
+    
+    for movie in movies:
+        title = movie.get("title", "").strip()
+        if not title:
+            continue
+        
+        # Filter out concerts, documentaries, non-movies
+        title_lower = title.lower()
+        exclude_terms = ["concert", "tour", "music", "video", "talk show", "news",
+                        "sports", "anime", "series", "documentary", "epic", "billie",
+                        "the weeknd", "beyonce", "adele", "artist", "tribute",
+                        "losers", "winners"]
+        if any(term in title_lower for term in exclude_terms):
+            continue
+        
+        title_lower = title.lower()
+        
+        # Filter excluded
+        if title_lower in excluded_titles:
+            continue
+        
+        imdb = movie.get("imdb", "")
+        mpaa = movie.get("mpaa", "")
+        movie_genres = movie.get("genres", [])
+        
+        # Genre filtering: use actual genre data from scraper
+        if genre_filter:
+            genre_filter_lower = genre_filter.lower()
+            # Check if movie's genres match the requested genre
+            matching_genres = [g for g in movie_genres if genre_filter_lower in g.lower()]
+            
+            if not matching_genres:
+                # No genre match, skip this movie
+                continue
+            
+            # Use the matched genres for the candidate
+            genre = matching_genres[0].title()
+        else:
+            # No genre filter - use first available genre or "New Release"
+            genre = movie_genres[0].title() if movie_genres else "New Release"
+        
+        # Determine year from title or use current year
+        year = ""
+        for part in title.split(" "):
+            part = part.strip().rstrip(")").lstrip("(")
+            if part.isdigit() and 1950 <= int(part) <= 2027:
+                year = part
+                break
+        if not year:
+            year = "2026"
+        
+        # Score: higher IMDb = higher score
+        score = 0.5  # Base score for being a recent release
+        if imdb:
+            try:
+                imdb_float = float(imdb)
+                # Scale IMDb 1-10 to 0-1 score
+                score += (imdb_float / 10.0) * 0.5
+            except ValueError:
+                pass
+        
+        # Bonus for highly-rated releases
+        if imdb:
+            try:
+                if float(imdb) >= 7.0:
+                    score += 0.3
+                elif float(imdb) >= 6.5:
+                    score += 0.2
+            except ValueError:
+                pass
+        
+        candidates.append({
+            "title": title,
+            "year": year,
+            "genre": genre,
+            "source": "dvdsreleasedates.com",
+            "description": f"New release | IMDb: {imdb} | {mpaa} | Genre: {', '.join(movie_genres)}" if movie_genres else f"New release | IMDb: {imdb} | {mpaa}",
+            "score": score,
+            "imdb": imdb,
+            "mpaa": mpaa,
+            "genres": movie_genres,
+        })
+    
+    # Sort by score
+    candidates.sort(key=lambda x: x["score"], reverse=True)
+    
+    return candidates[:count_needed * 2]  # Return extra to allow filtering
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Generate Plex movie recommendations")
@@ -278,6 +450,19 @@ def main():
         
         # Search this genre
         candidates = search_recommendations_for_genre(target_genre, args.count + 5, excluded)
+        
+        # Also add dvds releases as candidates
+        dvds_candidates = get_dvds_release_candidates(
+            genre_filter=target_genre, 
+            count_needed=args.count + 5, 
+            excluded_titles=excluded
+        )
+        # Mark dvds candidates with the target genre
+        for c in dvds_candidates:
+            c["genre"] = target_genre
+        
+        # Merge: web search candidates first, then dvds
+        candidates.extend(dvds_candidates)
         candidates = filter_excluded(candidates, excluded)
         candidates = deduplicate(candidates)
         
@@ -324,6 +509,19 @@ def main():
             print(f"  Searching {genre}...")
             genre_candidates = search_recommendations_for_genre(genre, candidates_per_genre + 3, excluded)
             all_candidates.extend(genre_candidates)
+        
+        # Also add dvds releases as cross-genre candidates
+        print("  Checking dvds releases...")
+        dvds_candidates = get_dvds_release_candidates(
+            count_needed=args.count + 5, 
+            excluded_titles=excluded
+        )
+        # Assign dvds candidates to the highest-weight genre
+        if dvds_candidates and top_genres:
+            best_genre = top_genres[0]  # Action typically
+            for c in dvds_candidates:
+                c["genre"] = best_genre
+        all_candidates.extend(dvds_candidates)
         
         # Score candidates by genre weight
         max_weight = max(profile["library_weights"].values()) if profile["library_weights"] else 1.0

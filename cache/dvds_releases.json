@@ -1,0 +1,1431 @@
+{
+  "source": "dvdsreleasedates.com",
+  "merged_releases": [
+    {
+      "title": "The Last Whale Singer",
+      "imdb": "5.9",
+      "mpaa": "PG",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "Passenger",
+      "imdb": "5.5",
+      "mpaa": "R",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "The Furious",
+      "imdb": "7.4",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "Girls Like Girls",
+      "imdb": "6.6",
+      "mpaa": "R",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "Gangland",
+      "imdb": "6.0",
+      "mpaa": "",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "Digital"
+    },
+    {
+      "title": "The Outer Threat",
+      "imdb": "4.5",
+      "mpaa": "",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "Digital"
+    },
+    {
+      "title": "The Third Degree",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [],
+      "release_type": "Digital"
+    },
+    {
+      "title": "Backrooms",
+      "imdb": "6.9",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "The Breadwinner",
+      "imdb": "5.7",
+      "mpaa": "PG",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "Stop! That! Train!",
+      "imdb": "6.0",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "Ip Man: Kung Fu Legend",
+      "imdb": "5.7",
+      "mpaa": "",
+      "genres": [
+        "Action"
+      ],
+      "release_type": "Digital"
+    },
+    {
+      "title": "Star Wars: The Mandalorian and Grogu",
+      "imdb": "6.9",
+      "mpaa": "PG-13",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "Scary Movie",
+      "imdb": "5.2",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "Leviticus",
+      "imdb": "6.8",
+      "mpaa": "R",
+      "genres": [
+        "Horror"
+      ],
+      "release_type": "DVD/Digital"
+    },
+    {
+      "title": "We Bury the Dead",
+      "imdb": "5.6",
+      "mpaa": "R",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Greenland 2: Migration",
+      "imdb": "5.2",
+      "mpaa": "PG-13",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Primate",
+      "imdb": "5.8",
+      "mpaa": "R",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Rip",
+      "imdb": "6.8",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "28 Years Later: The Bone Temple",
+      "imdb": "7.2",
+      "mpaa": "R",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "No Other Choice",
+      "imdb": "7.5",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Charlie the Wonderdog",
+      "imdb": "5.2",
+      "mpaa": "PG",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Night Patrol",
+      "imdb": "4.4",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Mercy",
+      "imdb": "6.2",
+      "mpaa": "PG-13",
+      "genres": [
+        "Action"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Return to Silent Hill",
+      "imdb": "4.0",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Shelter",
+      "imdb": "6.1",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Send Help",
+      "imdb": "6.7",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Iron Lung",
+      "imdb": "5.8",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Dracula",
+      "imdb": "6.2",
+      "mpaa": "R",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Strangers: Chapter 3",
+      "imdb": "4.2",
+      "mpaa": "R",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Solo Mio",
+      "imdb": "6.7",
+      "mpaa": "PG",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Misdirection",
+      "imdb": "4.8",
+      "mpaa": "",
+      "genres": [
+        "Action"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "GOAT",
+      "imdb": "6.7",
+      "mpaa": "PG",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Crime 101",
+      "imdb": "6.8",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Wuthering Heights",
+      "imdb": "6.1",
+      "mpaa": "R",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Cold Storage",
+      "imdb": "6.0",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "I Can Only Imagine 2",
+      "imdb": "7.1",
+      "mpaa": "PG",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "How to Make a Killing",
+      "imdb": "6.5",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Psycho Killer",
+      "imdb": "4.8",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Dreadful",
+      "imdb": "3.9",
+      "mpaa": "R",
+      "genres": [
+        "Horror"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Twenty One Pilots: More Than We Ever Imagined",
+      "imdb": "9.3",
+      "mpaa": "NR",
+      "genres": [],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Scream 7",
+      "imdb": "5.5",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Pillion",
+      "imdb": "6.9",
+      "mpaa": "NR",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "EPiC: Elvis Presley in Concert",
+      "imdb": "8.1",
+      "mpaa": "PG-13",
+      "genres": [],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Hoppers",
+      "imdb": "7.2",
+      "mpaa": "PG",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Bride",
+      "imdb": "5.6",
+      "mpaa": "R",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Protector",
+      "imdb": "5.2",
+      "mpaa": "R",
+      "genres": [
+        "Action"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Reminders of Him",
+      "imdb": "6.3",
+      "mpaa": "PG-13",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Undertone",
+      "imdb": "5.9",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Dhurandhar: The Revenge",
+      "imdb": "8.2",
+      "mpaa": "NR",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Project Hail Mary",
+      "imdb": "8.2",
+      "mpaa": "PG-13",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Ready or Not 2: Here I Come",
+      "imdb": "6.5",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "They Will Kill You",
+      "imdb": "6.3",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "A Magnificent Life",
+      "imdb": "6.6",
+      "mpaa": "PG-13",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Forbidden Fruits",
+      "imdb": "5.2",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Starbright",
+      "imdb": "3.7",
+      "mpaa": "",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Super Mario Galaxy Movie",
+      "imdb": "6.3",
+      "mpaa": "PG",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Drama",
+      "imdb": "7.2",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "A Great Awakening",
+      "imdb": "6.6",
+      "mpaa": "PG-13",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Faces of Death",
+      "imdb": "5.8",
+      "mpaa": "R",
+      "genres": [
+        "Horror"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Exit 8",
+      "imdb": "6.5",
+      "mpaa": "PG-13",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Lee Cronin&#039;s The Mummy",
+      "imdb": "6.2",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Mother Mary",
+      "imdb": "5.5",
+      "mpaa": "R",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Normal",
+      "imdb": "6.3",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Busboys",
+      "imdb": "4.2",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Michael",
+      "imdb": "7.4",
+      "mpaa": "PG-13",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Fuze",
+      "imdb": "6.2",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "I Swear",
+      "imdb": "8.4",
+      "mpaa": "R",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Over Your Dead Body",
+      "imdb": "6.3",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Apex",
+      "imdb": "6.1",
+      "mpaa": "R",
+      "genres": [
+        "Action"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Devil Wears Prada 2",
+      "imdb": "6.4",
+      "mpaa": "PG-13",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Animal Farm",
+      "imdb": "2.9",
+      "mpaa": "PG",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Hokum",
+      "imdb": "6.7",
+      "mpaa": "R",
+      "genres": [
+        "Horror"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Deep Water",
+      "imdb": "5.4",
+      "mpaa": "R",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Mortal Kombat II",
+      "imdb": "6.4",
+      "mpaa": "R",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Sheep Detectives",
+      "imdb": "7.4",
+      "mpaa": "PG",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Billie Eilish - Hit Me Hard and Soft: The Tour",
+      "imdb": "7.6",
+      "mpaa": "PG-13",
+      "genres": [],
+      "release_type": "DVD"
+    },
+    {
+      "title": "In the Grey",
+      "imdb": "6.3",
+      "mpaa": "R",
+      "genres": [
+        "Action"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Is God Is",
+      "imdb": "6.6",
+      "mpaa": "R",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Obsession",
+      "imdb": "7.9",
+      "mpaa": "R",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Wizard of the Kremlin",
+      "imdb": "6.0",
+      "mpaa": "R",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "I Love Boosters",
+      "imdb": "6.7",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Pressure",
+      "imdb": "7.3",
+      "mpaa": "PG-13",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Tuner",
+      "imdb": "7.2",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Masters of the Universe",
+      "imdb": "6.8",
+      "mpaa": "PG-13",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Power Ballad",
+      "imdb": "6.8",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Disclosure Day",
+      "imdb": "6.7",
+      "mpaa": "PG-13",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Toy Story 5",
+      "imdb": "7.5",
+      "mpaa": "PG",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Death of Robin Hood",
+      "imdb": "6.2",
+      "mpaa": "R",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Supergirl",
+      "imdb": "6.1",
+      "mpaa": "PG-13",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Jackass: Best and Last",
+      "imdb": "6.7",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Lucky Strike",
+      "imdb": "5.9",
+      "mpaa": "R",
+      "genres": [
+        "Action"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Minions &amp; Monsters",
+      "imdb": "6.5",
+      "mpaa": "PG",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Young Washington",
+      "imdb": "7.5",
+      "mpaa": "PG-13",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Moana",
+      "imdb": "5.7",
+      "mpaa": "PG",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Evil Dead Burn",
+      "imdb": "6.7",
+      "mpaa": "R",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Gail Daughtry and the Celebrity Sex Pass",
+      "imdb": "6.8",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Invite",
+      "imdb": "7.9",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Night Nurse",
+      "imdb": "5.0",
+      "mpaa": "NR",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Odyssey",
+      "imdb": "8.4",
+      "mpaa": "R",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Motor City",
+      "imdb": "5.9",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Pinocchio: Unstrung",
+      "imdb": "7.0",
+      "mpaa": "",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "I Want Your Sex",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Spider-Man: Brand New Day",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Ice Cream Man",
+      "imdb": "",
+      "mpaa": "NR",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Super Troopers 3",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Tony",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The End of Oak Street",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Late Fame",
+      "imdb": "6.8",
+      "mpaa": "",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "PAW Patrol: The Dino Movie",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Brink of War",
+      "imdb": "",
+      "mpaa": "PG",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Insidious: Out of the Further",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Mutiny",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Spa Weekend",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Magic Faraway Tree",
+      "imdb": "6.3",
+      "mpaa": "",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Rivals of Amziah King",
+      "imdb": "7.8",
+      "mpaa": "",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Thread: An Insidious Tale",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Coyote vs ACME",
+      "imdb": "",
+      "mpaa": "PG",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Buddy",
+      "imdb": "7.1",
+      "mpaa": "",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Cliffhanger",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Idiots",
+      "imdb": "5.4",
+      "mpaa": "",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Dog Stars",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Whisper Man",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "4 Kids Walk Into a Bank",
+      "imdb": "6.9",
+      "mpaa": "",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "By Any Means",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "How to Rob a Bank",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Practical Magic 2",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Runner",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Uprising",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Resident Evil",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Science Fiction"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Avengers: Endgame",
+      "imdb": "8.4",
+      "mpaa": "PG-13",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Forgotten Island",
+      "imdb": "7.8",
+      "mpaa": "PG",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Heart of the Beast",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Digger",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Verity",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Matchbox",
+      "imdb": "",
+      "mpaa": "PG-13",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Avatar Aang: The Last Airbender",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Social Reckoning",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Street Fighter",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Whalefall",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Clayface",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Thriller"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Klara and the Sun",
+      "imdb": "",
+      "mpaa": "PG-13",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Wife &amp; Dog",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Wild Horse Nine",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Godzilla Minus Zero",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Action"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Cat in the Hat",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Blood on Snow",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Crime"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Ebenezer: A Christmas Carol",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Great Beyond",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Hunger Games: Sunrise on the Reaping",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Focker-In-Law",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Hexed",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Madden",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Drama"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Man with the Bag",
+      "imdb": "",
+      "mpaa": "PG",
+      "genres": [
+        "Comedy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Violent Night 2",
+      "imdb": "",
+      "mpaa": "R",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Avengers: Doomsday",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Dune: Part Three",
+      "imdb": "",
+      "mpaa": "PG-13",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "The Angry Birds Movie 3",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Adventure"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Jumanji: Open World",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Fantasy"
+      ],
+      "release_type": "DVD"
+    },
+    {
+      "title": "Werwulf",
+      "imdb": "",
+      "mpaa": "",
+      "genres": [
+        "Mystery"
+      ],
+      "release_type": "DVD"
+    }
+  ],
+  "digital_count": 14,
+  "dvd_count": 155,
+  "merged_count": 159
+}
