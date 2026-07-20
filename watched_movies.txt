@@ -1,0 +1,12 @@
+# Movies the user has watched
+# Format: Movie Name (year) - user has seen | rating
+# Ratings: liked, disliked, meh (neutral), couldnt_finish (strongly disliked)
+
+Companion (2024) - user has seen | liked
+Prey (2022) - user has seen | liked
+Annihilation (2018) - user has seen | meh
+The Creator (2023) - user has seen | meh
+Her (2013) - user has seen | disliked
+Ghost in the Shell (1995) - user has seen | meh
+The Man from Earth (2007) - user has seen | couldnt_finish
+Rebel Moon: Part 2 — The Scargiver (2024) - user has seen | couldnt_finish

@@ -1,0 +1,6 @@
+# Watch List
+# Movies the user wants to see
+# Format: Movie Name (year) - added on YYYY-MM-DD | reason/notes
+
+Timecrimes (2007) - added on 2026-07-20
+The Endless (2017) - added on 2026-07-20

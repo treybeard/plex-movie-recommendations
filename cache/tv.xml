@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MediaContainer size="21" allowSync="1" art="/:/resources/show-fanart.jpg" identifier="com.plexapp.plugins.library" librarySectionID="2" librarySectionTitle="TV Shows" librarySectionUUID="93e98ffc-d823-4472-ab1c-5aaf53ebfc9a" mediaTagPrefix="/system/bundle/media/flags/" mediaTagVersion="1783955266" nocache="1" thumb="/:/resources/show.png" title1="TV Shows" title2="All Shows" viewGroup="show" viewMode="65592">
+<Directory ratingKey="18036" key="/library/metadata/18036/children" guid="plex://show/68024ff83fe58bc416057189" slug="the-audacity" studio="AMC Studios" type="show" title="The Audacity" titleSort="Audacity" contentRating="TV-MA" contentRatingAge="15" summary="Inside the bubble of Silicon Valley, a data-mining CEO strives to turn insight and influence into profit and power in this darkly comedic look at the warped dreams, outsized egos, and ethical lapses of the self-styled inventors of the future." index="1" audienceRating="7.1" viewCount="10" skipCount="1" lastViewedAt="1780013959" year="2026" thumb="/library/metadata/18036/thumb/1783337035" art="/library/metadata/18036/art/1783337035" duration="7200000" originallyAvailableAt="2026-04-12" leafCount="6" viewedLeafCount="6" childCount="1" addedAt="1776263069" updatedAt="1783337035" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/18040">
+<Image alt="The Audacity" type="coverPoster" url="/library/metadata/18036/thumb/1783337035" />
+<Image alt="The Audacity" type="background" url="/library/metadata/18036/art/1783337035" />
+<Image alt="The Audacity" type="clearLogo" url="/library/metadata/18036/clearLogo/1783337035" />
+<Image alt="The Audacity" type="backgroundSquare" url="/library/metadata/18036/squareArt/1783337035" />
+<UltraBlurColors topLeft="300d16" topRight="111313" bottomRight="303031" bottomLeft="1f2223" />
+<Genre tag="Drama" />
+<Genre tag="Comedy" />
+<Country tag="United States of America" />
+<Role tag="Billy Magnussen" />
+<Role tag="Meaghan Rath" />
+<Role tag="Zach Galifianakis" />
+</Directory>
+<Directory ratingKey="18211" key="/library/metadata/18211/children" guid="plex://show/68a2c3a99c0cefc0c6d48e41" slug="big-mistakes" studio="Not a Real Production Company" type="show" title="Big Mistakes" contentRating="TV-MA" contentRatingAge="15" summary="Two directionless siblings are blackmailed into the world of organized crime." index="1" audienceRating="6.7" viewCount="10" lastViewedAt="1778795209" year="2026" thumb="/library/metadata/18211/thumb/1783943645" art="/library/metadata/18211/art/1783943645" duration="1800000" originallyAvailableAt="2026-04-09" leafCount="8" viewedLeafCount="7" childCount="1" addedAt="1778707944" updatedAt="1783943645" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/18221">
+<Image alt="Big Mistakes" type="coverPoster" url="/library/metadata/18211/thumb/1783943645" />
+<Image alt="Big Mistakes" type="background" url="/library/metadata/18211/art/1783943645" />
+<Image alt="Big Mistakes" type="clearLogo" url="/library/metadata/18211/clearLogo/1783943645" />
+<Image alt="Big Mistakes" type="backgroundSquare" url="/library/metadata/18211/squareArt/1783943645" />
+<UltraBlurColors topLeft="570e02" topRight="a23016" bottomRight="3d1614" bottomLeft="a42d16" />
+<Genre tag="Comedy" />
+<Genre tag="Crime" />
+<Country tag="United States of America" />
+<Role tag="Dan Levy" />
+<Role tag="Laurie Metcalf" />
+<Role tag="Taylor Ortega" />
+</Directory>
+<Directory ratingKey="18272" key="/library/metadata/18272/children" guid="plex://show/64456c8c39b14cd3818b865f" slug="the-boroughs" studio="Upside Down Pictures" type="show" title="The Boroughs" titleSort="Boroughs" contentRating="TV-MA" contentRatingAge="15" summary="In a seemingly picturesque retirement community, a group of unlikely heroes must band together to stop an otherworldly threat from stealing the one thing they don&#39;t have - time." index="1" audienceRating="7.3" viewCount="9" lastViewedAt="1779970793" year="2026" thumb="/library/metadata/18272/thumb/1784453937" art="/library/metadata/18272/art/1784453937" duration="2700000" originallyAvailableAt="2026-05-21" leafCount="8" viewedLeafCount="8" childCount="1" addedAt="1779372076" updatedAt="1784453937" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/18282">
+<Image alt="The Boroughs" type="coverPoster" url="/library/metadata/18272/thumb/1784453937" />
+<Image alt="The Boroughs" type="background" url="/library/metadata/18272/art/1784453937" />
+<Image alt="The Boroughs" type="clearLogo" url="/library/metadata/18272/clearLogo/1784453937" />
+<Image alt="The Boroughs" type="backgroundSquare" url="/library/metadata/18272/squareArt/1784453937" />
+<UltraBlurColors topLeft="4b1d1b" topRight="0f2a3c" bottomRight="2b6581" bottomLeft="1a4059" />
+<Genre tag="Drama" />
+<Genre tag="Mystery" />
+<Country tag="United States of America" />
+<Role tag="Alfred Molina" />
+<Role tag="Alfre Woodard" />
+<Role tag="Denis O&#39;Hare" />
+</Directory>
+<Directory ratingKey="17861" key="/library/metadata/17861/children" guid="plex://show/5e60003a3aa1c8003ec26eac" slug="bridgerton" studio="shondaland" type="show" title="Bridgerton" contentRating="TV-MA" contentRatingAge="15" summary="The eight close-knit siblings of the Bridgerton family look for love and happiness in London high society." index="1" audienceRating="8.1" viewCount="16" skipCount="1" lastViewedAt="1772634065" year="2020" tagline="Love never plays by the rules." thumb="/library/metadata/17861/thumb/1783337031" art="/library/metadata/17861/art/1783337031" theme="/library/metadata/17861/theme/1783337031" duration="3600000" originallyAvailableAt="2020-12-25" leafCount="16" viewedLeafCount="16" childCount="2" addedAt="1775486764" updatedAt="1783337031" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17889">
+<Image alt="Bridgerton" type="coverPoster" url="/library/metadata/17861/thumb/1783337031" />
+<Image alt="Bridgerton" type="background" url="/library/metadata/17861/art/1783337031" />
+<Image alt="Bridgerton" type="clearLogo" url="/library/metadata/17861/clearLogo/1783337031" />
+<Image alt="Bridgerton" type="backgroundSquare" url="/library/metadata/17861/squareArt/1783337031" />
+<UltraBlurColors topLeft="4c1d1d" topRight="411b45" bottomRight="1b0820" bottomLeft="953b44" />
+<Genre tag="Drama" />
+<Genre tag="Romance" />
+<Country tag="United States of America" />
+<Role tag="Ruth Gemmell" />
+<Role tag="Luke Thompson" />
+<Role tag="Claudia Jessie" />
+</Directory>
+<Directory ratingKey="17945" key="/library/metadata/17945/children" guid="plex://show/5d9c08cc02391c001f5901b5" slug="condor" studio="MGM Television" type="show" title="Condor" contentRating="TV-MA" summary="A brilliant, young, idealistic CIA analyst finds himself in the middle of a conspiracy that kills everyone else at his office. Can he, with no field experience, stay alive long enough to get to the bottom of it?" index="1" audienceRating="7.0" year="2018" tagline="Truth is the first victim." thumb="/library/metadata/17945/thumb/1783337033" art="/library/metadata/17945/art/1783337033" theme="/library/metadata/17945/theme/1783337033" duration="3180000" originallyAvailableAt="2018-06-05" leafCount="10" viewedLeafCount="0" childCount="1" addedAt="1775486772" updatedAt="1783337033" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17958">
+<Image alt="Condor" type="coverPoster" url="/library/metadata/17945/thumb/1783337033" />
+<Image alt="Condor" type="background" url="/library/metadata/17945/art/1783337033" />
+<Image alt="Condor" type="clearLogo" url="/library/metadata/17945/clearLogo/1783337033" />
+<Image alt="Condor" type="backgroundSquare" url="/library/metadata/17945/squareArt/1783337033" />
+<UltraBlurColors topLeft="49210e" topRight="1d1818" bottomRight="322c29" bottomLeft="473f3b" />
+<Genre tag="Drama" />
+<Genre tag="Crime" />
+<Country tag="United States of America" />
+<Role tag="Max Irons" />
+<Role tag="Kristen Hager" />
+<Role tag="Bob Balaban" />
+</Directory>
+<Directory ratingKey="17881" key="/library/metadata/17881/children" guid="plex://show/5d9c0806e98e47001eb05c02" slug="counterpart" studio="Gilbert Films" type="show" title="Counterpart" contentRating="TV-MA" contentRatingAge="16" summary="Howard Silk is a lowly cog in a bureaucratic UN agency who is turning the last corner of a life filled with regret when he discovers the agency he works for is guarding a secret: a crossing to a parallel dimension." index="1" audienceRating="7.5" year="2017" tagline="What if there were another you?" thumb="/library/metadata/17881/thumb/1783337032" art="/library/metadata/17881/art/1783337032" theme="/library/metadata/17881/theme/1783337032" duration="3360000" originallyAvailableAt="2017-12-10" leafCount="20" viewedLeafCount="0" childCount="2" addedAt="1775486767" updatedAt="1783337032" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17907">
+<Image alt="Counterpart" type="coverPoster" url="/library/metadata/17881/thumb/1783337032" />
+<Image alt="Counterpart" type="background" url="/library/metadata/17881/art/1783337032" />
+<Image alt="Counterpart" type="backgroundSquare" url="/library/metadata/17881/squareArt/1783337032" />
+<UltraBlurColors topLeft="063343" topRight="1c687a" bottomRight="083145" bottomLeft="046785" />
+<Genre tag="Drama" />
+<Genre tag="Science Fiction" />
+<Country tag="United States of America" />
+<Role tag="J.K. Simmons" />
+<Role tag="Nazanin Boniadi" />
+<Role tag="Harry Lloyd" />
+</Directory>
+<Directory ratingKey="17925" key="/library/metadata/17925/children" guid="plex://show/5d9c090d705e7a001e6e9448" slug="emily-in-paris" studio="MTV Entertainment Studios" type="show" title="Emily in Paris" contentRating="TV-MA" contentRatingAge="15" summary="Emily, an ambitious twenty-something marketing executive from Chicago, unexpectedly lands her dream job in Paris when her company acquires a French luxury marketing company - and she is tasked with revamping their social media strategy. Emily&#39;s new life in Paris is filled with intoxicating adventures and surprising challenges as she juggles winning over her work colleagues, making friends, and navigating new romances." index="1" audienceRating="7.6" year="2020" tagline="Pardon her French." thumb="/library/metadata/17925/thumb/1783337032" art="/library/metadata/17925/art/1783337032" theme="/library/metadata/17925/theme/1783337032" duration="1800000" originallyAvailableAt="2020-10-02" leafCount="10" viewedLeafCount="0" childCount="1" addedAt="1775486770" updatedAt="1783337032" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17957">
+<Image alt="Emily in Paris" type="coverPoster" url="/library/metadata/17925/thumb/1783337032" />
+<Image alt="Emily in Paris" type="background" url="/library/metadata/17925/art/1783337032" />
+<Image alt="Emily in Paris" type="clearLogo" url="/library/metadata/17925/clearLogo/1783337032" />
+<Image alt="Emily in Paris" type="backgroundSquare" url="/library/metadata/17925/squareArt/1783337032" />
+<UltraBlurColors topLeft="4c1d17" topRight="2d102e" bottomRight="833b34" bottomLeft="541e35" />
+<Genre tag="Drama" />
+<Genre tag="Comedy" />
+<Country tag="United States of America" />
+<Role tag="Lily Collins" />
+<Role tag="Philippine Leroy-Beaulieu" />
+<Role tag="Ashley Park" />
+</Directory>
+<Directory ratingKey="18763" key="/library/metadata/18763/children" guid="plex://show/5d9c086bffd9ef001e994544" slug="the-graham-norton-show" studio="So Television" type="show" title="The Graham Norton Show" titleSort="Graham Norton Show" contentRating="TV-14" contentRatingAge="16" summary="Irish comedian Graham Norton hosts his very own chat show, which includes chatting to A-list celebrities, the very famous Red Chair game, live music, lots of jokes and fun from Graham and the celebrities themselves." index="1" audienceRating="7.2" viewCount="3" lastViewedAt="1783650236" year="2007" thumb="/library/metadata/18763/thumb/1782247775" art="/library/metadata/18763/art/1782247775" theme="/library/metadata/18763/theme/1782247775" duration="2940000" originallyAvailableAt="2007-02-22" leafCount="10" viewedLeafCount="3" childCount="1" addedAt="1782247772" updatedAt="1782247775" audienceRatingImage="themoviedb://image.rating">
+<Image alt="The Graham Norton Show" type="coverPoster" url="/library/metadata/18763/thumb/1782247775" />
+<Image alt="The Graham Norton Show" type="background" url="/library/metadata/18763/art/1782247775" />
+<Image alt="The Graham Norton Show" type="clearLogo" url="/library/metadata/18763/clearLogo/1782247775" />
+<Image alt="The Graham Norton Show" type="backgroundSquare" url="/library/metadata/18763/squareArt/1782247775" />
+<UltraBlurColors topLeft="332254" topRight="8c4827" bottomRight="553a83" bottomLeft="a03226" />
+<Genre tag="Comedy" />
+<Genre tag="Talk Show" />
+<Country tag="United Kingdom" />
+<Role tag="Graham Norton" />
+<Role tag="Judi Dench" />
+<Role tag="Dawn French" />
+</Directory>
+<Directory ratingKey="17832" key="/library/metadata/17832/children" guid="plex://show/5d9c086c02391c001f5891bb" slug="greys-anatomy" studio="The Mark Gordon Company" type="show" title="Grey&#39;s Anatomy" contentRating="TV-14" contentRatingAge="14" summary="A medical and romantic drama centered around Meredith Grey, an aspiring surgeon and daughter of one of the best surgeons, Dr. Ellis Grey. Throughout the series, Meredith goes through professional and personal challenges along with fellow surgeons at Seattle Grace Hospital." index="1" audienceRating="8.2" viewCount="2" lastViewedAt="1772659945" year="2005" tagline="Operations. Relations. Complications." thumb="/library/metadata/17832/thumb/1783337031" art="/library/metadata/17832/art/1783337031" theme="/library/metadata/17832/theme/1783337031" duration="2700000" originallyAvailableAt="2005-03-27" leafCount="2" viewedLeafCount="2" childCount="1" addedAt="1775486762" updatedAt="1783337031" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17850">
+<Image alt="Grey&#39;s Anatomy" type="coverPoster" url="/library/metadata/17832/thumb/1783337031" />
+<Image alt="Grey&#39;s Anatomy" type="background" url="/library/metadata/17832/art/1783337031" />
+<Image alt="Grey&#39;s Anatomy" type="clearLogo" url="/library/metadata/17832/clearLogo/1783337031" />
+<Image alt="Grey&#39;s Anatomy" type="backgroundSquare" url="/library/metadata/17832/squareArt/1783337031" />
+<UltraBlurColors topLeft="432611" topRight="170303" bottomRight="2f100e" bottomLeft="46220a" />
+<Genre tag="Drama" />
+<Genre tag="Romance" />
+<Country tag="United States of America" />
+<Role tag="Ellen Pompeo" />
+<Role tag="Chandra Wilson" />
+<Role tag="James Pickens Jr." />
+</Directory>
+<Directory ratingKey="17836" key="/library/metadata/17836/children" guid="plex://show/646e036d7a2b3b58610b5cab" slug="high-potential-1" studio="Goddard Textiles" type="show" title="High Potential" contentRating="TV-14" contentRatingAge="13" summary="Morgan is a single mom with an exceptional mind, whose unconventional knack for solving crimes leads to an unusual and unstoppable partnership with a by-the-book seasoned detective." index="1" audienceRating="8.2" viewCount="6" skipCount="1" lastViewedAt="1774045477" year="2024" tagline="The new face of investigation." thumb="/library/metadata/17836/thumb/1783337031" art="/library/metadata/17836/art/1783337031" duration="2700000" originallyAvailableAt="2024-09-17" leafCount="8" viewedLeafCount="6" childCount="1" addedAt="1775486763" updatedAt="1783337031" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17865">
+<Image alt="High Potential" type="coverPoster" url="/library/metadata/17836/thumb/1783337031" />
+<Image alt="High Potential" type="background" url="/library/metadata/17836/art/1783337031" />
+<Image alt="High Potential" type="clearLogo" url="/library/metadata/17836/clearLogo/1783337031" />
+<Image alt="High Potential" type="backgroundSquare" url="/library/metadata/17836/squareArt/1783337031" />
+<UltraBlurColors topLeft="4b1e19" topRight="300a14" bottomRight="924040" bottomLeft="943c4c" />
+<Genre tag="Crime" />
+<Genre tag="Drama" />
+<Country tag="United States of America" />
+<Role tag="Kaitlin Olson" />
+<Role tag="Daniel Sunjata" />
+<Role tag="Judy Reyes" />
+</Directory>
+<Directory ratingKey="18831" key="/library/metadata/18831/children" guid="plex://show/60d9f320181db7002d8772f7" slug="interview-with-the-vampire" studio="AMC Studios" type="show" title="Interview with the Vampire" originalTitle="Interview with the Vampire" contentRating="TV-MA" contentRatingAge="15" summary="A vampire tells his epic story of love, blood, and the perils of immortality to a journalist." index="1" audienceRating="7.5" viewCount="6" lastViewedAt="1784314286" year="2022" thumb="/library/metadata/18831/thumb/1784367889" art="/library/metadata/18831/art/1784367889" theme="/library/metadata/18831/theme/1784367889" duration="3600000" originallyAvailableAt="2022-10-02" leafCount="6" viewedLeafCount="6" childCount="1" addedAt="1783706114" updatedAt="1784367889" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/18838">
+<Image alt="Interview with the Vampire" type="coverPoster" url="/library/metadata/18831/thumb/1784367889" />
+<Image alt="Interview with the Vampire" type="background" url="/library/metadata/18831/art/1784367889" />
+<Image alt="Interview with the Vampire" type="clearLogo" url="/library/metadata/18831/clearLogo/1784367889" />
+<Image alt="Interview with the Vampire" type="backgroundSquare" url="/library/metadata/18831/squareArt/1784367889" />
+<UltraBlurColors topLeft="123241" topRight="0c0909" bottomRight="113041" bottomLeft="204b67" />
+<Genre tag="Drama" />
+<Genre tag="Fantasy" />
+<Country tag="United States of America" />
+<Role tag="Jacob Anderson" />
+<Role tag="Sam Reid" />
+<Role tag="Eric Bogosian" />
+</Directory>
+<Directory ratingKey="17980" key="/library/metadata/17980/children" guid="plex://show/5fc3c6e6767541002dda40e1" slug="into-the-dark-1" studio="Blumhouse Television" type="show" title="Into the Dark" contentRating="TV-14" contentRatingAge="17" summary="A horror anthology series with each episode inspired by a holiday." index="1" audienceRating="6.0" viewCount="19" lastViewedAt="1777555733" year="2018" tagline="12 months, 12 twisted tales." thumb="/library/metadata/17980/thumb/1783337034" art="/library/metadata/17980/art/1783337034" theme="/library/metadata/17980/theme/1783337034" duration="5400000" originallyAvailableAt="2018-10-05" leafCount="13" viewedLeafCount="10" childCount="2" addedAt="1775510398" updatedAt="1783337034" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17994">
+<Image alt="Into the Dark" type="coverPoster" url="/library/metadata/17980/thumb/1783337034" />
+<Image alt="Into the Dark" type="background" url="/library/metadata/17980/art/1783337034" />
+<Image alt="Into the Dark" type="clearLogo" url="/library/metadata/17980/clearLogo/1783337034" />
+<UltraBlurColors topLeft="123145" topRight="2b6193" bottomRight="245ca7" bottomLeft="214c79" />
+<Genre tag="Drama" />
+<Genre tag="Fantasy" />
+<Country tag="United States of America" />
+<Role tag="Aurora Perrineau" />
+<Role tag="Diane Sellers" />
+<Role tag="Dylan Arnold" />
+</Directory>
+<Directory ratingKey="17963" key="/library/metadata/17963/children" guid="plex://show/5eabaa834ea2520042bd6f1f" slug="kaos" studio="SISTER" type="show" title="KAOS" contentRating="TV-MA" contentRatingAge="15" summary="As discord reigns on Mount Olympus and almighty Zeus spirals into paranoia, three mortals are destined to reshape the future of humankind." index="1" audienceRating="7.3" viewCount="8" skipCount="2" lastViewedAt="1775588275" year="2024" thumb="/library/metadata/17963/thumb/1783337034" art="/library/metadata/17963/art/1783337034" duration="3600000" originallyAvailableAt="2024-08-29" leafCount="8" viewedLeafCount="8" childCount="1" addedAt="1775487216" updatedAt="1783337034" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17973">
+<Image alt="KAOS" type="coverPoster" url="/library/metadata/17963/thumb/1783337034" />
+<Image alt="KAOS" type="background" url="/library/metadata/17963/art/1783337034" />
+<Image alt="KAOS" type="clearLogo" url="/library/metadata/17963/clearLogo/1783337034" />
+<Image alt="KAOS" type="backgroundSquare" url="/library/metadata/17963/squareArt/1783337034" />
+<UltraBlurColors topLeft="501912" topRight="962f19" bottomRight="aa1f22" bottomLeft="a92606" />
+<Genre tag="Comedy" />
+<Genre tag="Drama" />
+<Country tag="United Kingdom" />
+<Role tag="Jeff Goldblum" />
+<Role tag="Janet McTeer" />
+<Role tag="Stephen Dillane" />
+</Directory>
+<Directory ratingKey="18591" key="/library/metadata/18591/children" guid="plex://show/5d9c090546115600200ae8ea" slug="the-nevers" studio="Mutant Enemy Productions" type="show" title="The Nevers" titleSort="Nevers" contentRating="TV-MA" contentRatingAge="17" summary="A gang of Victorian women find themselves with unusual abilities, relentless enemies, and a mission that might change the world." index="1" audienceRating="7.9" lastViewedAt="1781932561" year="2021" tagline="A touch of power can change the world" thumb="/library/metadata/18591/thumb/1784540261" art="/library/metadata/18591/art/1784540261" theme="/library/metadata/18591/theme/1784540261" duration="3600000" originallyAvailableAt="2021-04-11" leafCount="11" viewedLeafCount="0" childCount="1" addedAt="1781890773" updatedAt="1784540261" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/18605">
+<Image alt="The Nevers" type="coverPoster" url="/library/metadata/18591/thumb/1784540261" />
+<Image alt="The Nevers" type="background" url="/library/metadata/18591/art/1784540261" />
+<Image alt="The Nevers" type="clearLogo" url="/library/metadata/18591/clearLogo/1784540261" />
+<Image alt="The Nevers" type="backgroundSquare" url="/library/metadata/18591/squareArt/1784540261" />
+<UltraBlurColors topLeft="21214e" topRight="262d60" bottomRight="191b41" bottomLeft="04041a" />
+<Genre tag="Drama" />
+<Genre tag="Fantasy" />
+<Country tag="United States of America" />
+<Role tag="Laura Donnelly" />
+<Role tag="Ann Skelly" />
+<Role tag="Olivia Williams" />
+</Directory>
+<Directory ratingKey="17820" key="/library/metadata/17820/children" guid="plex://show/5f2e583c684902004303e54a" slug="only-murders-in-the-building" studio="Rhode Island Ave. Productions" type="show" title="Only Murders in the Building" contentRating="TV-MA" contentRatingAge="14" summary="Charles, Oliver and Mabel, three eccentric neighbors, find purpose and chaos in solving murders that hit close to home through their true-crime podcast, turning their New York apartment building into a playground of mystery and mischief." index="1" audienceRating="8.4" viewCount="4" lastViewedAt="1773936670" year="2021" tagline="Every Body Has a Secret" thumb="/library/metadata/17820/thumb/1783337030" art="/library/metadata/17820/art/1783337030" theme="/library/metadata/17820/theme/1783337030" duration="1800000" originallyAvailableAt="2021-08-31" leafCount="10" viewedLeafCount="4" childCount="1" addedAt="1775486761" updatedAt="1783337030" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17853">
+<Image alt="Only Murders in the Building" type="coverPoster" url="/library/metadata/17820/thumb/1783337030" />
+<Image alt="Only Murders in the Building" type="background" url="/library/metadata/17820/art/1783337030" />
+<Image alt="Only Murders in the Building" type="clearLogo" url="/library/metadata/17820/clearLogo/1783337030" />
+<Image alt="Only Murders in the Building" type="backgroundSquare" url="/library/metadata/17820/squareArt/1783337030" />
+<UltraBlurColors topLeft="143427" topRight="933e4a" bottomRight="0e2a23" bottomLeft="4f1614" />
+<Genre tag="Comedy" />
+<Genre tag="Mystery" />
+<Country tag="United States of America" />
+<Role tag="Steve Martin" />
+<Role tag="Martin Short" />
+<Role tag="Selena Gomez" />
+</Directory>
+<Directory ratingKey="17937" key="/library/metadata/17937/children" guid="plex://show/65fbe7b1116f07acb4bbc9fb" slug="rematch-1" studio="UNIT&#201;" type="show" title="Rematch" summary="1997. Garry Kasparov, the greatest chess player of all time, faces Deep Blue, IBM&#39;s supercomputer. Two brains, face to face; one man against an empire; a battle of humans against machines that forever changed the perception of artificial intelligence." index="1" audienceRating="7.2" year="2024" tagline="Kasparov vs. Deep Blue. The brain&#39;s last stand." thumb="/library/metadata/17937/thumb/1780742346" art="/library/metadata/17937/art/1780742346" duration="3120000" originallyAvailableAt="2024-10-02" leafCount="6" viewedLeafCount="0" childCount="1" addedAt="1775486771" updatedAt="1780742346" audienceRatingImage="themoviedb://image.rating">
+<Image alt="Rematch" type="coverPoster" url="/library/metadata/17937/thumb/1780742346" />
+<Image alt="Rematch" type="background" url="/library/metadata/17937/art/1780742346" />
+<Image alt="Rematch" type="clearLogo" url="/library/metadata/17937/clearLogo/1780742346" />
+<UltraBlurColors topLeft="142f4b" topRight="091b2e" bottomRight="933d50" bottomLeft="112843" />
+<Genre tag="Thriller" />
+<Genre tag="Drama" />
+<Country tag="France" />
+<Role tag="Christian Cooke" />
+<Role tag="Orion Lee" />
+<Role tag="Sarah Bolger" />
+</Directory>
+<Directory ratingKey="17846" key="/library/metadata/17846/children" guid="plex://show/5d9c08ffe264b7001fc4d397" slug="the-rookie" studio="ABC Studios" type="show" title="The Rookie" titleSort="Rookie" contentRating="TV-14" contentRatingAge="13" summary="Starting over isn&#39;t easy, especially for John Nolan who, after a life-altering incident, is pursuing his dream of joining the LAPD. As their oldest rookie, he&#39;s met with skepticism from those who see him as just a walking midlife crisis." index="1" audienceRating="8.6" viewCount="9" lastViewedAt="1772576006" year="2018" tagline="He&#39;s Got This (Season 2)" thumb="/library/metadata/17846/thumb/1783337031" art="/library/metadata/17846/art/1783337031" theme="/library/metadata/17846/theme/1783337031" duration="2580000" originallyAvailableAt="2018-10-15" leafCount="9" viewedLeafCount="9" childCount="1" addedAt="1775486763" updatedAt="1783337031" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/17880">
+<Image alt="The Rookie" type="coverPoster" url="/library/metadata/17846/thumb/1783337031" />
+<Image alt="The Rookie" type="background" url="/library/metadata/17846/art/1783337031" />
+<Image alt="The Rookie" type="clearLogo" url="/library/metadata/17846/clearLogo/1783337031" />
+<Image alt="The Rookie" type="backgroundSquare" url="/library/metadata/17846/squareArt/1783337031" />
+<UltraBlurColors topLeft="4c1e15" topRight="8e4726" bottomRight="92432d" bottomLeft="973c35" />
+<Genre tag="Crime" />
+<Genre tag="Drama" />
+<Country tag="United States of America" />
+<Role tag="Nathan Fillion" />
+<Role tag="Melissa O&#39;Neil" />
+<Role tag="Eric Winter" />
+</Directory>
+<Directory ratingKey="17872" key="/library/metadata/17872/children" guid="plex://show/5d9c07f82df347001e3a733c" slug="rupauls-drag-race" studio="World of Wonder" type="show" title="RuPaul&#39;s Drag Race" contentRating="TV-14" contentRatingAge="15" summary="Join RuPaul, the world&#39;s most famous drag queen, as the host, mentor and judge for the ultimate in drag queen competitions. The top drag queens in the U.S. will vie for drag stardom as RuPaul, in full glamazon drag, will reign supreme in all judging and eliminations while helping guide the contestants as they prepare for each challenge." index="1" audienceRating="7.5" viewCount="2" lastViewedAt="1770945158" year="2009" tagline="Putting Realness Back Into Reality" thumb="/library/metadata/17872/thumb/1783337032" art="/library/metadata/17872/art/1783337032" theme="/library/metadata/17872/theme/1783337032" duration="3780000" originallyAvailableAt="2009-02-02" leafCount="16" viewedLeafCount="2" childCount="1" addedAt="1775486766" updatedAt="1783337032" audienceRatingImage="themoviedb://image.rating">
+<Image alt="RuPaul&#39;s Drag Race" type="coverPoster" url="/library/metadata/17872/thumb/1783337032" />
+<Image alt="RuPaul&#39;s Drag Race" type="background" url="/library/metadata/17872/art/1783337032" />
+<Image alt="RuPaul&#39;s Drag Race" type="clearLogo" url="/library/metadata/17872/clearLogo/1783337032" />
+<Image alt="RuPaul&#39;s Drag Race" type="backgroundSquare" url="/library/metadata/17872/squareArt/1783337032" />
+<UltraBlurColors topLeft="541314" topRight="ab1b24" bottomRight="a91f30" bottomLeft="a92031" />
+<Genre tag="Reality" />
+<Genre tag="Game Show" />
+<Country tag="United States of America" />
+<Role tag="RuPaul" />
+<Role tag="Michelle Visage" />
+<Role tag="Ross Mathews" />
+</Directory>
+<Directory ratingKey="17403" key="/library/metadata/17403/children" guid="plex://show/5d9c086bffd9ef001e994347" slug="scrubs" studio="Touchstone Television" type="show" title="Scrubs" contentRating="TV-14" contentRatingAge="13" summary="Set in the fictional Sacred Heart hospital in California, John &#34;J.D&#34; Dorian makes his way through the overwhelming world of medicine, with the help of his best friend, his fellow rookie doctors, and the arrogant, but brilliant attending physician he views as his mentor." index="1" audienceRating="8.2" viewCount="5" skipCount="1" lastViewedAt="1774047104" year="2001" thumb="/library/metadata/17403/thumb/1782296716" art="/library/metadata/17403/art/1782296716" theme="/library/metadata/17403/theme/1782296716" duration="1800000" originallyAvailableAt="2001-10-01" leafCount="2" viewedLeafCount="2" childCount="1" addedAt="1772861358" updatedAt="1782296716" audienceRatingImage="themoviedb://image.rating">
+<Image alt="Scrubs" type="coverPoster" url="/library/metadata/17403/thumb/1782296716" />
+<Image alt="Scrubs" type="background" url="/library/metadata/17403/art/1782296716" />
+<Image alt="Scrubs" type="clearLogo" url="/library/metadata/17403/clearLogo/1782296716" />
+<Image alt="Scrubs" type="backgroundSquare" url="/library/metadata/17403/squareArt/1782296716" />
+<UltraBlurColors topLeft="232b32" topRight="6b2a31" bottomRight="29292e" bottomLeft="242627" />
+<Genre tag="Drama" />
+<Genre tag="Comedy" />
+<Country tag="United States of America" />
+<Role tag="Zach Braff" />
+<Role tag="Donald Faison" />
+<Role tag="John C. McGinley" />
+</Directory>
+<Directory ratingKey="17960" key="/library/metadata/17960/children" guid="plex://show/69c1d7f646ce20310e98d82a" slug="scrubs-2026-1" studio="Doozer" type="show" title="Scrubs (2026)" contentRating="TV-14" summary="JD and Turk scrub in together after a long break. Medicine and interns have evolved, but their friendship remains strong. New and familiar faces at Sacred Heart bring laughs, emotion, and unexpected moments." index="1" audienceRating="7.9" year="2026" thumb="/library/metadata/17960/thumb/1783337034" art="/library/metadata/17960/art/1783337034" duration="1260000" originallyAvailableAt="2026-02-25" leafCount="3" viewedLeafCount="2" childCount="1" addedAt="1775486943" updatedAt="1783337034" audienceRatingImage="themoviedb://image.rating">
+<Image alt="Scrubs (2026)" type="coverPoster" url="/library/metadata/17960/thumb/1783337034" />
+<Image alt="Scrubs (2026)" type="background" url="/library/metadata/17960/art/1783337034" />
+<Image alt="Scrubs (2026)" type="backgroundSquare" url="/library/metadata/17960/squareArt/1783337034" />
+<UltraBlurColors topLeft="2f2c35" topRight="205252" bottomRight="0f2f2e" bottomLeft="242a2f" />
+<Genre tag="Comedy" />
+<Genre tag="Drama" />
+<Country tag="United States of America" />
+<Role tag="Zach Braff" />
+<Role tag="Donald Faison" />
+<Role tag="Sarah Chalke" />
+</Directory>
+<Directory ratingKey="18660" key="/library/metadata/18660/children" guid="plex://show/5d9c08007b5c2e001e651722" slug="space-1999" studio="Group 3" type="show" title="Space: 1999" contentRating="TV-14" summary="Follows the crew of Moonbase Alpha who struggle to survive when a massive explosion throws the Moon from Earths orbit and out into deep space." index="1" audienceRating="7.1" lastViewedAt="1781931690" year="1975" tagline="The Future Is Fantastic!" thumb="/library/metadata/18660/thumb/1784540262" art="/library/metadata/18660/art/1784540262" theme="/library/metadata/18660/theme/1784540262" duration="3000000" originallyAvailableAt="1975-07-28" leafCount="48" viewedLeafCount="0" childCount="2" addedAt="1781902801" updatedAt="1784540262" audienceRatingImage="themoviedb://image.rating" primaryExtraKey="/library/metadata/18706">
+<Image alt="Space: 1999" type="coverPoster" url="/library/metadata/18660/thumb/1784540262" />
+<Image alt="Space: 1999" type="background" url="/library/metadata/18660/art/1784540262" />
+<Image alt="Space: 1999" type="clearLogo" url="/library/metadata/18660/clearLogo/1784540262" />
+<Image alt="Space: 1999" type="backgroundSquare" url="/library/metadata/18660/squareArt/1784540262" />
+<UltraBlurColors topLeft="4b1d1c" topRight="9a3a27" bottomRight="4b1d1c" bottomLeft="9c3636" />
+<Genre tag="Adventure" />
+<Genre tag="Drama" />
+<Country tag="United Kingdom" />
+<Role tag="Martin Landau" />
+<Role tag="Barbara Bain" />
+<Role tag="Nick Tate" />
+</Directory>
+</MediaContainer>
