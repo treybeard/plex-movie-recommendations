@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-v2 Recommendation Engine — generates cross-genre movie recommendations
-based on the user's Plex library profile.
+v2 Recommendation Engine — generates cross-genre or genre-specific movie recommendations.
 
-Usage: python3 generate_recommendations.py [--count 10] [--output results.json]
+Usage:
+  python3 generate_recommendations.py [--count 10] [--genre ACTION] [--output results.json]
+
+Modes:
+  --genre ACTION   Search only within Action and its subgenres
+  --genre          (omitted)          Search across all genres weighted by profile
 """
 import json
 import sys
@@ -23,6 +27,12 @@ def load_profile():
     """Load the preference profile."""
     profile_path = os.path.join(SKILL_DIR, "profiles.json")
     with open(profile_path, "r") as f:
+        return json.load(f)
+
+def load_genre_mapping():
+    """Load the Plex-to-Wikipedia genre mapping."""
+    mapping_path = os.path.join(SKILL_DIR, "plex_to_wikipedia_genres.json")
+    with open(mapping_path, "r") as f:
         return json.load(f)
 
 def get_library_titles():
@@ -63,19 +73,56 @@ def parse_watched_movies():
         pass
     return watched
 
-def search_recommendations_for_genre(top_genre, count_needed, excluded_titles):
+def get_genre_subgenres(target_genre, genre_mapping):
+    """
+    Get all Wikipedia subgenres for a target genre.
+    Returns list of subgenre strings.
+    """
+    mapped = load_genre_mapping()
+    summary = mapped.get("summary_by_super_genre", {})
+    
+    target_lower = target_genre.lower()
+    subgenres = []
+    for super_key, data in summary.items():
+        if super_key.lower() == target_lower:
+            # This is the target genre's entry
+            # Get all Plex genres mapped to this super-genre
+            plex_genres = data.get("plex_genres", [])
+            # Also get the wikipedia_genres field
+            wg = data.get("wikipedia_genres", [])
+            subgenres.extend(wg)
+            subgenres.extend(plex_genres)
+            break
+    
+    # Also check the mapping directly
+    for plex_genre, entry in mapped.get("genre_mapping", {}).items():
+        if entry.get("wikipedia_super_genre", "").lower() == target_lower:
+            if entry.get("wikipedia_genre") and entry["wikipedia_genre"] not in subgenres:
+                subgenres.append(entry["wikipedia_genre"])
+    
+    return list(set(subgenres))
+
+def search_recommendations_for_genre(target_genre, count_needed, excluded_titles):
     """
     Search for highly-rated movies in a specific genre.
     Returns list of candidate dicts.
     """
     candidates = []
+    target_lower = target_genre.lower()
     
-    # Build search queries for this genre
+    # Build search queries
     queries = [
-        f"best {top_genre} movies 2023 2024 2025 2026 highly rated",
-        f"top {top_genre} films critics choice must watch",
-        f"highest rated {top_genre} movies not mainstream",
+        f"best {target_genre} movies 2023 2024 2025 2026 highly rated",
+        f"top {target_genre} films critics choice must watch",
+        f"highest rated {target_genre} movies not mainstream",
     ]
+    
+    # Also search subgenres
+    subgenres = get_genre_subgenres(target_genre, load_genre_mapping())
+    for subgenre in subgenres[:3]:
+        sub_lower = subgenre.lower()
+        if sub_lower != target_lower:
+            queries.append(f"best {subgenre} movies 2024 2025 highly rated")
     
     seen = set()
     for query in queries:
@@ -86,7 +133,6 @@ def search_recommendations_for_genre(top_genre, count_needed, excluded_titles):
             for item in results.get("data", {}).get("web", []):
                 title = item.get("title", "")
                 # Extract just the movie title
-                # Remove extra text like " - IMDB", " - Rotten Tomatoes", etc.
                 if " - " in title:
                     title = title.split(" - ")[0].strip()
                 if " (" in title:
@@ -106,7 +152,7 @@ def search_recommendations_for_genre(top_genre, count_needed, excluded_titles):
                 description = item.get("description", "")
                 url = item.get("url", "")
                 
-                # Try to extract year from title or description
+                # Try to extract year from title
                 year = ""
                 for part in title.split(" ("):
                     part = part.strip().rstrip(")")
@@ -121,39 +167,15 @@ def search_recommendations_for_genre(top_genre, count_needed, excluded_titles):
                 candidates.append({
                     "title": title,
                     "year": year,
-                    "genre": top_genre,
+                    "genre": target_genre,
                     "source": url,
                     "description": description[:300],
-                    "score": 0,  # calculated below
+                    "score": 0,
                 })
         except Exception as e:
             print(f"  Search error for '{query}': {e}", file=sys.stderr)
     
     return candidates
-
-def score_candidates(candidates, profile):
-    """Score candidates based on how well they match the user's genre preferences."""
-    # Normalize genre weights for scoring
-    max_weight = max(profile["library_weights"].values()) if profile["library_weights"] else 1.0
-    normalized_weights = {k: v / max_weight for k, v in profile["library_weights"].items()}
-    
-    genre = profile["top_genres"][0] if profile["top_genres"] else "Action"
-    
-    for c in candidates:
-        # Base score from genre weight
-        c["score"] = normalized_weights.get(c["genre"], 0.1)
-        
-        # Bonus for newer movies (more recent = better match for what user might have missed)
-        if c["year"]:
-            try:
-                year_int = int(c["year"])
-                recency = max(0, (2026 - year_int) / 100)
-                c["score"] += recency * 0.1
-            except ValueError:
-                pass
-    
-    # Sort by score descending
-    candidates.sort(key=lambda x: x["score"], reverse=True)
 
 def filter_excluded(candidates, excluded_titles):
     """Remove candidates that are in the excluded set."""
@@ -170,37 +192,43 @@ def deduplicate(candidates):
             unique.append(c)
     return unique
 
-def generate_reason(movie, profile, library_titles):
-    """Generate a personalized reason why the user might like this movie."""
-    genre = movie.get("genre", "Action")
-    reason_parts = []
+def get_matching_library_titles(target_genre, genre_mapping):
+    """Find library titles that match this genre."""
+    matching = []
+    summary = genre_mapping.get("summary_by_super_genre", {})
     
-    # Library composition reason
-    genre_count = sum(1 for t in library_titles if t)
-    if genre in profile["library_weights"]:
-        pct = profile["library_weights"][genre] * 100
-        reason_parts.append(f"Your library has strong {genre} content ({pct:.0f}% of your collection)")
+    target_lower = target_genre.lower()
+    for super_key, data in summary.items():
+        if super_key.lower() == target_lower:
+            matching.extend(data.get("plex_genres", []))
+            break
     
-    # Add subgenre reasons based on watched ratings
-    watched = profile.get("watched_ratings", {})
-    if watched:
-        liked_genres = set()
-        for title, rating in watched.items():
-            if rating == "liked":
-                # Find which genres this watched title belongs to
-                for title_lower in library_titles:
-                    if title.lower() in title_lower:
-                        # We'd need per-title genre info; skip for now
-                        pass
+    # Search library for these genres
+    movies_file = os.path.join(SKILL_DIR, "cache", "movies.xml")
+    try:
+        tree = ET.parse(movies_file)
+        root = tree.getroot()
+        for video in root.findall(".//Video"):
+            title = video.get("title", "")
+            vgenres = [g.get("tag", "") for g in video.findall("Genre")]
+            # Check if any genre matches
+            for g in vgenres:
+                for mapped_genre in matching:
+                    if mapped_genre.lower() == g.lower() or mapped_genre.lower() in g.lower():
+                        matching.append(title)
+                        break
+    except Exception:
+        pass
     
-    if reason_parts:
-        return " — " + " ".join(reason_parts[:2])
-    return f" — a highly-rated {genre} film"
+    # Deduplicate and limit
+    matching = list(set(matching))[:3]
+    return matching
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="Generate cross-genre Plex recommendations")
+    parser = argparse.ArgumentParser(description="Generate Plex movie recommendations")
     parser.add_argument("--count", type=int, default=10, help="Number of recommendations")
+    parser.add_argument("--genre", type=str, default=None, help="Filter to specific genre (e.g. Horror, Action, Comedy)")
     parser.add_argument("--profile", default=os.path.join(SKILL_DIR, "profiles.json"))
     parser.add_argument("--output", default=None)
     args = parser.parse_args()
@@ -219,79 +247,124 @@ def main():
     # Combined exclusion set
     excluded = library_titles | watched_titles
     
-    top_genres = profile.get("top_genres", [])[:6]  # Top 6 genres
-    print(f"\nTop genres: {top_genres}")
-    print(f"Generating {args.count} recommendations...")
+    # Load genre mapping
+    genre_mapping = load_genre_mapping()
     
-    # Calculate candidates per genre
-    candidates_per_genre = max(1, args.count // len(top_genres))
-    all_candidates = []
-    
-    for genre in top_genres:
-        print(f"  Searching {genre}...")
-        genre_candidates = search_recommendations_for_genre(genre, candidates_per_genre + 3, excluded)
-        all_candidates.extend(genre_candidates)
-    
-    # Score, filter, and deduplicate
-    score_candidates(all_candidates, profile)
-    all_candidates = filter_excluded(all_candidates, excluded)
-    all_candidates = deduplicate(all_candidates)
-    
-    # Take top N
-    top_candidates = all_candidates[:args.count]
-    
-    # Build final recommendations with reasons
+    # Initialize for output (will be set in both branches)
     recommendations = []
-    for i, movie in enumerate(top_candidates):
-        candidate_genre = movie.get("genre", "Action")
-        # Get some library titles that match this genre for personalization
-        matching_library = []
-        movies_file = os.path.join(SKILL_DIR, "cache", "movies.xml")
-        try:
-            tree = ET.parse(movies_file)
-            root = tree.getroot()
-            for video in root.findall(".//Video"):
-                title = video.get("title", "")
-                vgenres = [g.get("tag", "") for g in video.findall("Genre")]
-                # Check if this movie's genres match the candidate's genre
-                for g in vgenres:
-                    if g.lower() == candidate_genre.lower() or candidate_genre.lower() in g.lower():
-                        matching_library.append(title)
-                        if len(matching_library) >= 2:
-                            break
-                if len(matching_library) >= 2:
-                    break
-        except Exception:
-            pass
+    final_candidates = []
+    
+    # Determine which genres to search
+    if args.genre:
+        # SPECIFIC GENRE MODE
+        target_genre = args.genre.title()
+        print(f"\nMode: Specific genre — {target_genre}")
         
-        if not matching_library:
-            matching_library = ["several {} films".format(candidate_genre.lower())]
+        # Get subgenres
+        subgenres = get_genre_subgenres(target_genre, genre_mapping)
+        print(f"  Target genre: {target_genre}")
+        if subgenres:
+            print(f"  Subgenres: {', '.join(subgenres[:5])}")
         
-        description = movie.get("description", "")
-        year = movie.get("year", "")
-        title = movie["title"]
+        # Search this genre
+        candidates = search_recommendations_for_genre(target_genre, args.count + 5, excluded)
+        candidates = filter_excluded(candidates, excluded)
+        candidates = deduplicate(candidates)
         
-        if year:
-            full_title = "{} ({})".format(title, year)
-        else:
-            full_title = title
+        # Score by genre weight
+        weight = profile["library_weights"].get(target_genre, 0.1)
+        for c in candidates:
+            c["score"] = weight
         
-        recommendations.append({
-            "rank": i + 1,
-            "title": full_title,
-            "genre": candidate_genre,
-            "year": year,
-            "description": description[:250],
-            "why_you_might_like_it": "You have strong {} content in your library. ".format(candidate_genre)
-                                     + "You also enjoy {}".format(', '.join(matching_library[:2])),
-        })
+        # Take top N
+        candidates.sort(key=lambda x: x["score"], reverse=True)
+        top_candidates = candidates[:args.count]
+        final_candidates = candidates
+        
+        # Build recommendations
+        recommendations = []
+        for i, movie in enumerate(top_candidates):
+            matching_library = get_matching_library_titles(target_genre, genre_mapping)
+            
+            year = movie.get("year", "")
+            title = movie["title"]
+            full_title = "{} ({})".format(title, year) if year else title
+            
+            recommendations.append({
+                "rank": i + 1,
+                "title": full_title,
+                "genre": target_genre,
+                "year": year,
+                "description": movie.get("description", "")[:250],
+                "why_you_might_like_it": "Your library has {}% {} content. ".format(
+                    round(weight * 100, 0), target_genre.lower()) +
+                    ("Also from your collection: {}".format(", ".join(matching_library[:2])) if matching_library else ""),
+            })
+        
+    else:
+        # CROSS-GENRE MODE (default v2 behavior)
+        top_genres = profile.get("top_genres", [])[:6]
+        print(f"\nMode: Cross-genre — searching all top genres")
+        print(f"  Top genres: {', '.join(top_genres[:6])}")
+        
+        candidates_per_genre = max(1, args.count // len(top_genres))
+        all_candidates = []
+        
+        for genre in top_genres:
+            print(f"  Searching {genre}...")
+            genre_candidates = search_recommendations_for_genre(genre, candidates_per_genre + 3, excluded)
+            all_candidates.extend(genre_candidates)
+        
+        # Score candidates by genre weight
+        max_weight = max(profile["library_weights"].values()) if profile["library_weights"] else 1.0
+        normalized_weights = {k: v / max_weight for k, v in profile["library_weights"].items()}
+        
+        for c in all_candidates:
+            c["score"] = normalized_weights.get(c["genre"], 0.1)
+            # Bonus for newer movies
+            if c["year"]:
+                try:
+                    year_int = int(c["year"])
+                    recency = max(0, (2026 - year_int) / 100)
+                    c["score"] += recency * 0.1
+                except ValueError:
+                    pass
+        
+        # Sort, filter, deduplicate
+        all_candidates.sort(key=lambda x: x["score"], reverse=True)
+        all_candidates = filter_excluded(all_candidates, excluded)
+        all_candidates = deduplicate(all_candidates)
+        top_candidates = all_candidates[:args.count]
+        
+        # Build recommendations
+        recommendations = []
+        for i, movie in enumerate(top_candidates):
+            candidate_genre = movie.get("genre", "Action")
+            matching_library = get_matching_library_titles(candidate_genre, genre_mapping)
+            
+            year = movie.get("year", "")
+            title = movie["title"]
+            full_title = "{} ({})".format(title, year) if year else title
+            
+            recommendations.append({
+                "rank": i + 1,
+                "title": full_title,
+                "genre": candidate_genre,
+                "year": year,
+                "description": movie.get("description", "")[:250],
+                "why_you_might_like_it": "You have strong {}% {} content in your library. ".format(
+                    round(normalized_weights.get(candidate_genre, 0.1) * 100, 0),
+                    candidate_genre.lower()) +
+                    ("Also from your collection: {}".format(", ".join(matching_library[:2])) if matching_library else ""),
+            })
     
     # Output
     result = {
+        "mode": "specific" if args.genre else "cross-genre",
         "genre_weights": dict(list(profile.get("library_weights", {}).items())[:10]),
         "top_genres": profile.get("top_genres", [])[:10],
         "recommendations": recommendations,
-        "total_found": len(all_candidates),
+        "total_found": len(final_candidates),
         "total_shown": len(recommendations),
     }
     
