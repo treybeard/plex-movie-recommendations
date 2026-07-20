@@ -1,0 +1,497 @@
+{
+  "metadata": {
+    "source": "Plex Movies library (cache/movies.xml)",
+    "total_movies": 371,
+    "total_plex_genres": 44,
+    "mapped_genres": 44,
+    "unmapped_genres": 0
+  },
+  "genre_mapping": {
+    "Action": {
+      "plex_genre": "Action",
+      "count": 133,
+      "percentage": 35.8,
+      "wikipedia_super_genre": "Action",
+      "wikipedia_genre": "Action"
+    },
+    "Action Adventure": {
+      "plex_genre": "Action Adventure",
+      "count": 2,
+      "percentage": 0.5,
+      "wikipedia_super_genre": "Action",
+      "wikipedia_genre": "Action"
+    },
+    "Action Adventure Comedy": {
+      "plex_genre": "Action Adventure Comedy",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Action",
+      "wikipedia_genre": "Action"
+    },
+    "Action Comedy": {
+      "plex_genre": "Action Comedy",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Comedy",
+      "wikipedia_genre": "Action comedy"
+    },
+    "Action Crime Drama": {
+      "plex_genre": "Action Crime Drama",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Action",
+      "wikipedia_genre": "Action"
+    },
+    "Action Fantasy": {
+      "plex_genre": "Action Fantasy",
+      "count": 2,
+      "percentage": 0.5,
+      "wikipedia_super_genre": "Action",
+      "wikipedia_genre": "Action"
+    },
+    "Action Fantasy SciFi": {
+      "plex_genre": "Action Fantasy SciFi",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Action",
+      "wikipedia_genre": "Action"
+    },
+    "Action Stoner Comedy": {
+      "plex_genre": "Action Stoner Comedy",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Action",
+      "wikipedia_genre": "Action"
+    },
+    "Action Thriller": {
+      "plex_genre": "Action Thriller",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Action",
+      "wikipedia_genre": "Action"
+    },
+    "Adventure": {
+      "plex_genre": "Adventure",
+      "count": 70,
+      "percentage": 18.9,
+      "wikipedia_super_genre": "Adventure",
+      "wikipedia_genre": "Adventure"
+    },
+    "Adventure Biography": {
+      "plex_genre": "Adventure Biography",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Adventure",
+      "wikipedia_genre": "Adventure"
+    },
+    "Animation": {
+      "plex_genre": "Animation",
+      "count": 8,
+      "percentage": 2.2,
+      "wikipedia_super_genre": "Animation",
+      "wikipedia_genre": "Animation"
+    },
+    "Biography": {
+      "plex_genre": "Biography",
+      "count": 14,
+      "percentage": 3.8,
+      "wikipedia_super_genre": "Biography",
+      "wikipedia_genre": "Biography"
+    },
+    "Biography Crime": {
+      "plex_genre": "Biography Crime",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Biography",
+      "wikipedia_genre": "Biography"
+    },
+    "Comedy": {
+      "plex_genre": "Comedy",
+      "count": 63,
+      "percentage": 17.0,
+      "wikipedia_super_genre": "Comedy",
+      "wikipedia_genre": "Comedy"
+    },
+    "Comedy Fantasy": {
+      "plex_genre": "Comedy Fantasy",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Comedy",
+      "wikipedia_genre": "Comedy"
+    },
+    "Comedy Western": {
+      "plex_genre": "Comedy Western",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Comedy",
+      "wikipedia_genre": "Comedy"
+    },
+    "Crime": {
+      "plex_genre": "Crime",
+      "count": 28,
+      "percentage": 7.5,
+      "wikipedia_super_genre": "Crime",
+      "wikipedia_genre": "Crime"
+    },
+    "Crime Comedy": {
+      "plex_genre": "Crime Comedy",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Crime",
+      "wikipedia_genre": "Crime"
+    },
+    "Documentary": {
+      "plex_genre": "Documentary",
+      "count": 12,
+      "percentage": 3.2,
+      "wikipedia_super_genre": "Documentary",
+      "wikipedia_genre": "Documentary"
+    },
+    "Documentary Sports": {
+      "plex_genre": "Documentary Sports",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Documentary",
+      "wikipedia_genre": "Documentary"
+    },
+    "Drama": {
+      "plex_genre": "Drama",
+      "count": 87,
+      "percentage": 23.5,
+      "wikipedia_super_genre": "Drama",
+      "wikipedia_genre": "Drama"
+    },
+    "Drama-Sports": {
+      "plex_genre": "Drama-Sports",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Drama-Sports",
+      "wikipedia_genre": "Drama-Sports"
+    },
+    "Family": {
+      "plex_genre": "Family",
+      "count": 11,
+      "percentage": 3.0,
+      "wikipedia_super_genre": "Family",
+      "wikipedia_genre": "Family"
+    },
+    "Fantasy": {
+      "plex_genre": "Fantasy",
+      "count": 10,
+      "percentage": 2.7,
+      "wikipedia_super_genre": "Fantasy",
+      "wikipedia_genre": "Fantasy"
+    },
+    "Fantasy Adventure": {
+      "plex_genre": "Fantasy Adventure",
+      "count": 2,
+      "percentage": 0.5,
+      "wikipedia_super_genre": "Fantasy",
+      "wikipedia_genre": "Fantasy"
+    },
+    "Fantasy SciFi": {
+      "plex_genre": "Fantasy SciFi",
+      "count": 2,
+      "percentage": 0.5,
+      "wikipedia_super_genre": "Fantasy",
+      "wikipedia_genre": "Fantasy"
+    },
+    "Fantasy SciFi Action": {
+      "plex_genre": "Fantasy SciFi Action",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Fantasy",
+      "wikipedia_genre": "Fantasy"
+    },
+    "History": {
+      "plex_genre": "History",
+      "count": 4,
+      "percentage": 1.1,
+      "wikipedia_super_genre": "History",
+      "wikipedia_genre": "History"
+    },
+    "History Drama": {
+      "plex_genre": "History Drama",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "History",
+      "wikipedia_genre": "History"
+    },
+    "Horror": {
+      "plex_genre": "Horror",
+      "count": 36,
+      "percentage": 9.7,
+      "wikipedia_super_genre": "Horror",
+      "wikipedia_genre": "Horror"
+    },
+    "Music": {
+      "plex_genre": "Music",
+      "count": 9,
+      "percentage": 2.4,
+      "wikipedia_super_genre": "Music",
+      "wikipedia_genre": "Music"
+    },
+    "Musical": {
+      "plex_genre": "Musical",
+      "count": 8,
+      "percentage": 2.2,
+      "wikipedia_super_genre": "Musical",
+      "wikipedia_genre": "Musical"
+    },
+    "Mystery": {
+      "plex_genre": "Mystery",
+      "count": 11,
+      "percentage": 3.0,
+      "wikipedia_super_genre": "Crime",
+      "wikipedia_genre": "Mystery"
+    },
+    "Romance": {
+      "plex_genre": "Romance",
+      "count": 11,
+      "percentage": 3.0,
+      "wikipedia_super_genre": "Romance",
+      "wikipedia_genre": "Romance"
+    },
+    "SciFi Action Thriller": {
+      "plex_genre": "SciFi Action Thriller",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Action",
+      "wikipedia_genre": "Action"
+    },
+    "SciFi Fantasy": {
+      "plex_genre": "SciFi Fantasy",
+      "count": 1,
+      "percentage": 0.3,
+      "wikipedia_super_genre": "Fantasy",
+      "wikipedia_genre": "Fantasy"
+    },
+    "SciFi Thriller": {
+      "plex_genre": "SciFi Thriller",
+      "count": 2,
+      "percentage": 0.5,
+      "wikipedia_super_genre": "Thriller",
+      "wikipedia_genre": "Thriller"
+    },
+    "Science Fiction": {
+      "plex_genre": "Science Fiction",
+      "count": 48,
+      "percentage": 12.9,
+      "wikipedia_super_genre": "Science Fiction",
+      "wikipedia_genre": "Science Fiction"
+    },
+    "Short": {
+      "plex_genre": "Short",
+      "count": 2,
+      "percentage": 0.5,
+      "wikipedia_super_genre": "Short",
+      "wikipedia_genre": "Short"
+    },
+    "Sport": {
+      "plex_genre": "Sport",
+      "count": 4,
+      "percentage": 1.1,
+      "wikipedia_super_genre": "Sport",
+      "wikipedia_genre": "Sport"
+    },
+    "Thriller": {
+      "plex_genre": "Thriller",
+      "count": 47,
+      "percentage": 12.7,
+      "wikipedia_super_genre": "Thriller",
+      "wikipedia_genre": "Thriller"
+    },
+    "War": {
+      "plex_genre": "War",
+      "count": 3,
+      "percentage": 0.8,
+      "wikipedia_super_genre": "War",
+      "wikipedia_genre": "War"
+    },
+    "Western": {
+      "plex_genre": "Western",
+      "count": 2,
+      "percentage": 0.5,
+      "wikipedia_super_genre": "Western",
+      "wikipedia_genre": "Western"
+    }
+  },
+  "summary_by_super_genre": {
+    "Action": {
+      "plex_genres": [
+        "Action",
+        "Action Adventure",
+        "Action Adventure Comedy",
+        "Action Crime Drama",
+        "Action Fantasy",
+        "Action Fantasy SciFi",
+        "Action Stoner Comedy",
+        "Action Thriller",
+        "SciFi Action Thriller"
+      ],
+      "total_count": 143,
+      "film_genre": "Action"
+    },
+    "Drama": {
+      "plex_genres": [
+        "Drama"
+      ],
+      "total_count": 87,
+      "film_genre": "Drama"
+    },
+    "Adventure": {
+      "plex_genres": [
+        "Adventure",
+        "Adventure Biography"
+      ],
+      "total_count": 71,
+      "film_genre": "Adventure"
+    },
+    "Comedy": {
+      "plex_genres": [
+        "Action Comedy",
+        "Comedy",
+        "Comedy Fantasy",
+        "Comedy Western"
+      ],
+      "total_count": 66,
+      "film_genre": "Comedy"
+    },
+    "Thriller": {
+      "plex_genres": [
+        "SciFi Thriller",
+        "Thriller"
+      ],
+      "total_count": 49,
+      "film_genre": "Thriller"
+    },
+    "Science Fiction": {
+      "plex_genres": [
+        "Science Fiction"
+      ],
+      "total_count": 48,
+      "film_genre": "Science Fiction"
+    },
+    "Crime": {
+      "plex_genres": [
+        "Crime",
+        "Crime Comedy",
+        "Mystery"
+      ],
+      "total_count": 40,
+      "film_genre": "Mystery"
+    },
+    "Horror": {
+      "plex_genres": [
+        "Horror"
+      ],
+      "total_count": 36,
+      "film_genre": "Horror"
+    },
+    "Fantasy": {
+      "plex_genres": [
+        "Fantasy",
+        "Fantasy Adventure",
+        "Fantasy SciFi",
+        "Fantasy SciFi Action",
+        "SciFi Fantasy"
+      ],
+      "total_count": 16,
+      "film_genre": "Fantasy"
+    },
+    "Biography": {
+      "plex_genres": [
+        "Biography",
+        "Biography Crime"
+      ],
+      "total_count": 15,
+      "film_genre": "Biography"
+    },
+    "Documentary": {
+      "plex_genres": [
+        "Documentary",
+        "Documentary Sports"
+      ],
+      "total_count": 13,
+      "film_genre": "Documentary"
+    },
+    "Family": {
+      "plex_genres": [
+        "Family"
+      ],
+      "total_count": 11,
+      "film_genre": "Family"
+    },
+    "Romance": {
+      "plex_genres": [
+        "Romance"
+      ],
+      "total_count": 11,
+      "film_genre": "Romance"
+    },
+    "Music": {
+      "plex_genres": [
+        "Music"
+      ],
+      "total_count": 9,
+      "film_genre": "Music"
+    },
+    "Animation": {
+      "plex_genres": [
+        "Animation"
+      ],
+      "total_count": 8,
+      "film_genre": "Animation"
+    },
+    "Musical": {
+      "plex_genres": [
+        "Musical"
+      ],
+      "total_count": 8,
+      "film_genre": "Musical"
+    },
+    "History": {
+      "plex_genres": [
+        "History",
+        "History Drama"
+      ],
+      "total_count": 5,
+      "film_genre": "History"
+    },
+    "Sport": {
+      "plex_genres": [
+        "Sport"
+      ],
+      "total_count": 4,
+      "film_genre": "Sport"
+    },
+    "War": {
+      "plex_genres": [
+        "War"
+      ],
+      "total_count": 3,
+      "film_genre": "War"
+    },
+    "Short": {
+      "plex_genres": [
+        "Short"
+      ],
+      "total_count": 2,
+      "film_genre": "Short"
+    },
+    "Western": {
+      "plex_genres": [
+        "Western"
+      ],
+      "total_count": 2,
+      "film_genre": "Western"
+    },
+    "Drama-Sports": {
+      "plex_genres": [
+        "Drama-Sports"
+      ],
+      "total_count": 1,
+      "film_genre": "Drama-Sports"
+    }
+  }
+}

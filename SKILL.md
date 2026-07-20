@@ -1,15 +1,16 @@
 ---
 name: plex-recommendations
 description: >
-  Recommend sci-fi movies from the user's Plex library while excluding
-  movies they've already watched. Includes functionality to mark movies
-  as watched so they are filtered from future recommendations.
-version: 1.0.0
+  Multi-genre movie recommendation system that analyzes your Plex library
+  and personal ratings to suggest movies you'll actually enjoy. Uses
+  Wikipedia's film genre taxonomy for cross-genre recommendations.
+  Supports all 15+ genres in your library, not just sci-fi.
+version: 2.0.0
 author: Hermes
-tags: [media, plex, recommendations, sci-fi]
+tags: [media, plex, recommendations, multi-genre, film-taxonomy]
 ---
 
-# Plex Recommendations
+# Plex Recommendations v2
 
 ## Connection Details
 
@@ -18,9 +19,80 @@ API token: stored in `~/.hermes/profiles/aether/api_keys/plex.txt`
 Library sections: Movies (section 9), TV Shows (section 2)
 - **DO NOT scan Vuze (section 5)** — it is a temporary staging area where movies sit until the user decides whether to promote them to the main libraries.
 
+## Genre System (v2)
+
+All recommendations use Wikipedia's film genre taxonomy (from List_of_genres wiki) as the canonical reference for genre classification. Every Plex genre tag is mapped to a Wikipedia super-genre.
+
+Full mapping is stored in `plex_to_wikipedia_genres.json`. Compound genres (e.g. "Action Horror") are mapped to the first major genre's Wikipedia super-genre.
+
+### Library Preference Weights (generated from library + ratings)
+
+Run `python3 generate_profile.py` to compute fresh preference weights. Current known weights:
+
+| Genre | Weight | % of Library |
+|---|---|---|
+| Action | 0.3868 | 39% |
+| Drama | 0.2345 | 23% |
+| Adventure | 0.1914 | 19% |
+| Comedy | 0.1779 | 18% |
+| Thriller | 0.1321 | 13% |
+| Science Fiction | 0.1294 | 13% |
+| Crime | 0.1078 | 11% |
+| Horror | 0.0970 | 10% |
+| Fantasy | 0.0431 | 4% |
+| Biography | 0.0404 | 4% |
+
+See `profiles.json` for the full profile with all genres, rating adjustments, and Plex-to-Wikipedia genre mappings.
+
+## How It Works
+
+### Step 1: Library Scan & Cache
+
+```bash
+curl -s "http://10.0.0.130:32400/library/sections/9/all?X-Plex-Token=$(cat ~/.hermes/profiles/aether/api_keys/plex.txt)" -o cache/movies.xml
+curl -s "http://10.0.0.130:32400/library/sections/2/all?X-Plex-Token=$(cat ~/.hermes/profiles/aether/api_keys/plex.txt)" -o cache/tv.xml
+echo "Library scanned and cached."
+```
+
+**Important:** Only scan **Movies** (section 9) and **TV Shows** (section 2). Do NOT scan Vuze (section 5).
+
+### Step 2: Map Genres
+
+After scanning, run the genre mapper:
+```bash
+python3 map_genres.py
+```
+This maps all Plex genres to Wikipedia film genres and saves the mapping to `plex_to_wikipedia_genres.json`.
+
+### Step 3: Generate Preference Profile
+
+```bash
+python3 generate_profile.py
+```
+This combines:
+- **Library composition** (every movie counts as an 8/10)
+- **Watched ratings** (liked +2, meh +0.5, disliked -1, couldnt_finish -2)
+
+Result: `profiles.json` with per-genre preference weights.
+
+### Step 4: Generate Recommendations
+
+```bash
+python3 generate_recommendations.py --count 10
+```
+Uses the profile to find top genres, searches the web for highly-rated movies in those genres NOT in your library, and returns ranked recommendations.
+
+### Step 5: Refresh Library
+
+When the user says "refresh my Plex library" or "update my library":
+1. Re-run Step 1 (scan commands)
+2. Re-run Step 2 (map_genres.py)
+3. Re-run Step 3 (generate_profile.py)
+4. Report what was added: "Found X new movies, Y new shows in your library."
+
 ## User Profile / Viewing Preferences
 
-### Sci-Fi Preference Baseline
+### Library as Preference Baseline
 All movies/shows in the user's **Movies** (section 9) and **TV Shows** (section 2) libraries count toward preferences.
 - Every entry in these libraries is treated as an 8/10 or equivalent
 - The user sometimes watches content elsewhere first then downloads it to their library, so it may show as unwatched
@@ -34,100 +106,58 @@ When generating recommendations, EXCLUDE:
 - Any movie/TV show currently in Vuze section (section 5) — temporary staging, also exclude
 - Only recommend movies NOT in any of the user's libraries
 
-### User's Actual Watched Movies (from watched_movies.txt)
-- Coherence (2013) — watched
-- Upgrade (2018) — watched
-- Stowaway (2021) — watched
+### User's Watched Movies (from watched_movies.txt)
+| Movie | Rating |
+|---|---|
+| Companion (2024) | liked |
+| Prey (2022) | liked |
+| Annihilation (2018) | meh |
+| The Creator (2023) | meh |
+| Her (2013) | disliked |
+| Ghost in the Shell (1995) | meh |
+| The Man from Earth (2007) | couldnt_finish |
+| Rebel Moon: Part 2 — The Scargiver (2024) | couldnt_finish |
 
-### Watched Movies Tracking
-Movies the user has actively marked as watched (not just in library):
-- **Coherence (2013)** — user has seen this
-- **Upgrade (2018)** — user has seen this
-- **Stowaway (2021)** — user has seen this
+### Rating Format
+- `liked` — user enjoyed it and would watch similar (boosts that genre +2)
+- `disliked` — user didn't enjoy it and should avoid similar (demotes genre -1)
+- `meh` — user had no strong opinion (slight boost +0.5)
+- `couldnt_finish` — user couldn't finish it (strongly demotes genre -2)
 
-These are excluded from recommendations even though they may not be in the Plex library.
+### How Recommendations Are Generated (v2)
 
-## How It Works
+The v2 system generates recommendations across ALL genres in the user's library, weighted by:
+1. **Library composition** — what genres the user has collected (base weight)
+2. **Watched ratings** — which of those genres the user actually enjoyed (adjustment)
+3. **Genre hierarchy** — Wikipedia taxonomy ensures proper categorization of compound Plex genres
 
-### Library Scanning & Caching
-
-By default, the skill keeps a local cache of the library to avoid repeated API calls. When the user updates their library, run a fresh scan.
-
-**Scan command:**
-```bash
-curl -s "http://10.0.0.130:32400/library/sections/9/all?X-Plex-Token=$(cat ~/.hermes/profiles/aether/api_keys/plex.txt)" -o ~/.hermes/profiles/aether/skills/media/plex-recommendations/cache/movies.xml
-curl -s "http://10.0.0.130:32400/library/sections/2/all?X-Plex-Token=$(cat ~/.hermes/profiles/aether/api_keys/plex.txt)" -o ~/.hermes/profiles/aether/skills/media/plex-recommendations/cache/tv.xml
-echo "Library scanned and cached."
-```
-
-**Important:** Only scan **Movies** (section 9) and **TV Shows** (section 2). Do NOT scan Vuze (section 5) — it is a temporary staging area where movies sit until the user decides whether to promote them to the main libraries.
-
-### Step 2: Parse Cached Library
-Parse the XML files to find all titles, genres, and metadata.
-
-### Step 3: Identify New Content
-Compare the new scan against the existing cache. Any titles that appear in the new scan but not in the old cache are "new." Treat all new titles as having a rating of **7/10** for recommendation purposes.
-
-### Step 4: Filter Out Watched
-Exclude movies/TV shows from recommendations that:
-- Are in the watched_movies.txt file (user has already seen them)
-- The user has explicitly marked as watched
-
-### Step 5: Generate Recommendations
-Search the web for:
-- Similar sci-fi movies NOT in the user's library
-- Movies from the same subgenre as their favorites
-- Critically acclaimed sci-fi from 2024-2026
-
-### Step 6: Present Results
-Return 10 recommendations with:
-- Title, year, brief description
-- Which subgenre it matches (time travel, space, AI, etc.)
-- Why the user might like it based on their library
-
-**When the user says "refresh my Plex library" or "update my library":**
-1. Re-run the scan commands above
-2. Compare against the old cache to find new content
-3. Mark new content as 7/10
-4. Recalculate recommendations with the updated library
-5. Save the new cache to replace the old one
-6. Report back what was added: "Found X new movies, Y new shows in your library."
+When recommending, the system:
+- Loads the top genres from `profiles.json` by weight
+- Searches for highly-rated movies in those genres
+- Filters out everything in the user's Plex library, Vuze, and watched list
+- Returns ranked recommendations with matched genre and reasoning
 
 ## Marking a Movie as Watched
 
 When the user says "I've seen [movie name]" or "I've already watched [movie name]", add the movie to the watched list:
 
 ```bash
-# Add to watched list file with rating
-echo "[Movie Name] (year) - user has seen | liked" >> ~/.hermes/profiles/aether/skills/media/plex-recommendations/watched_movies.txt
-# or
-echo "[Movie Name] (year) - user has seen | disliked" >> ~/.hermes/profiles/aether/skills/media/plex-recommendations/watched_movies.txt
-# or
-echo "[Movie Name] (year) - user has seen | meh" >> ~/.hermes/profiles/aether/skills/media/plex-recommendations/watched_movies.txt
-# or
-echo "[Movie Name] (year) - user has seen | couldnt_finish" >> ~/.hermes/profiles/aether/skills/media/plex-recommendations/watched_movies.txt
+echo "[Movie Name] (year) - user has seen | liked" >> watched_movies.txt
+echo "[Movie Name] (year) - user has seen | disliked" >> watched_movies.txt
+echo "[Movie Name] (year) - user has seen | meh" >> watched_movies.txt
+echo "[Movie Name] (year) - user has seen | couldnt_finish" >> watched_movies.txt
 ```
 
-### Rating Format
-- `liked` — user enjoyed it and would watch similar
-- `disliked` — user didn't enjoy it and should avoid similar
-- `meh` — user had no strong opinion
-- `couldnt_finish` — user couldn't finish it (strongly disliked or found it too slow)
-
-### Watching Movies
-To tell the assistant they have watched a movie, just say:
-- "I've seen [movie name]"
-- "I already watched [movie]"
-
-The assistant will add it to the exclusion list for future recommendations.
+Then regenerate the profile:
+```bash
+python3 generate_profile.py
+```
 
 ### Watch List Management
 When the user says "add [movie] to the watch list", add it to `watch_list.txt` in the skill directory.
 When the user rates a movie in `watched_movies.txt`, automatically remove it from `watch_list.txt` if it exists there.
 To manually remove a movie from the watch list, the user can say "remove [movie] from the watch list" and the assistant removes the entry from `watch_list.txt`.
 To see the watch list, the user can say "what's on the watch list?" and the assistant reads `watch_list.txt`.
-
-The watched list is stored in the skill directory so it persists across sessions.
 
 ## Library Management
 
@@ -152,4 +182,32 @@ curl -s "http://10.0.0.130:32400/status/sessions?X-Plex-Token=$(cat ~/.hermes/pr
 - User ratings are stored in Plex's SQLite database, not exposed via API.
 - Use viewCount, viewOffset, and lastViewedAt as proxies for "watched" status.
 - Always cross-reference recommendations against the user's library to avoid duplicates.
-- The assistant should proactively exclude movies the user has marked as watched.
+- Genre mapping uses Wikipedia's taxonomy as the canonical reference — see `plex_to_wikipedia_genres.json`.
+- After any rating change or library refresh, regenerate the profile with `generate_profile.py`.
+
+## Script Reference
+
+| Script | Purpose |
+|---|---|
+| `map_genres.py` | Maps Plex genres to Wikipedia film genre taxonomy |
+| `generate_profile.py` | Creates preference profile from library + ratings |
+| `generate_recommendations.py` | Generates cross-genre movie recommendations |
+| `parse_library.py` | Parses XML cache into structured JSON |
+
+## File Structure
+
+```
+plex-recommendations/
+├── SKILL.md                    # This file
+├── cache/
+│   ├── movies.xml              # Cached Plex movie library
+│   └── tv.xml                  # Cached Plex TV show library
+├── profiles.json               # Generated preference profile (v2)
+├── plex_to_wikipedia_genres.json  # Genre mapping (v2)
+├── watched_movies.txt          # Movies watched + ratings
+├── watch_list.txt              # Movies user wants to watch
+├── map_genres.py               # Plex→Wikipedia genre mapper
+├── generate_profile.py         # Preference profile generator
+├── generate_recommendations.py # Recommendation engine
+└── parse_library.py            # XML cache parser
+```

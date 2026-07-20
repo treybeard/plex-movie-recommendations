@@ -1,0 +1,328 @@
+{
+  "version": "2.0",
+  "generated_from": "Plex library (cache/movies.xml) + watched_ratings",
+  "total_movies_analyzed": 371,
+  "library_weights": {
+    "Action": 0.3868,
+    "Drama": 0.2345,
+    "Adventure": 0.1914,
+    "Comedy": 0.1779,
+    "Thriller": 0.1321,
+    "Science Fiction": 0.1294,
+    "Crime": 0.1078,
+    "Horror": 0.097,
+    "Fantasy": 0.0431,
+    "Biography": 0.0404,
+    "Documentary": 0.035,
+    "Family": 0.0296,
+    "Romance": 0.0296,
+    "Music": 0.0243,
+    "Animation": 0.0216,
+    "Musical": 0.0216,
+    "History": 0.0135,
+    "Sport": 0.0108,
+    "War": 0.0081,
+    "Short": 0.0054,
+    "Western": 0.0054,
+    "Drama-Sports": 0.0027
+  },
+  "top_genres": [
+    "Action",
+    "Drama",
+    "Adventure",
+    "Comedy",
+    "Thriller",
+    "Science Fiction",
+    "Crime",
+    "Horror",
+    "Fantasy",
+    "Biography",
+    "Documentary",
+    "Family",
+    "Romance",
+    "Music",
+    "Animation"
+  ],
+  "rating_adjustments": {
+    "Action": 0.5
+  },
+  "wiki_to_plex_genres": {
+    "Action": [
+      "Action",
+      "Action Adventure",
+      "Action Adventure Comedy",
+      "Action Crime Drama",
+      "Action Fantasy",
+      "Action Fantasy SciFi",
+      "Action Stoner Comedy",
+      "Action Thriller",
+      "SciFi Action Thriller"
+    ],
+    "Comedy": [
+      "Action Comedy",
+      "Comedy",
+      "Comedy Fantasy",
+      "Comedy Western"
+    ],
+    "Adventure": [
+      "Adventure",
+      "Adventure Biography"
+    ],
+    "Animation": [
+      "Animation"
+    ],
+    "Biography": [
+      "Biography",
+      "Biography Crime"
+    ],
+    "Crime": [
+      "Crime",
+      "Crime Comedy",
+      "Mystery"
+    ],
+    "Documentary": [
+      "Documentary",
+      "Documentary Sports"
+    ],
+    "Drama": [
+      "Drama"
+    ],
+    "Drama-Sports": [
+      "Drama-Sports"
+    ],
+    "Family": [
+      "Family"
+    ],
+    "Fantasy": [
+      "Fantasy",
+      "Fantasy Adventure",
+      "Fantasy SciFi",
+      "Fantasy SciFi Action",
+      "SciFi Fantasy"
+    ],
+    "History": [
+      "History",
+      "History Drama"
+    ],
+    "Horror": [
+      "Horror"
+    ],
+    "Music": [
+      "Music"
+    ],
+    "Musical": [
+      "Musical"
+    ],
+    "Romance": [
+      "Romance"
+    ],
+    "Thriller": [
+      "SciFi Thriller",
+      "Thriller"
+    ],
+    "Science Fiction": [
+      "Science Fiction"
+    ],
+    "Short": [
+      "Short"
+    ],
+    "Sport": [
+      "Sport"
+    ],
+    "War": [
+      "War"
+    ],
+    "Western": [
+      "Western"
+    ]
+  },
+  "watched_count": 8,
+  "watched_ratings": {
+    "Companion": "liked",
+    "Prey": "liked",
+    "Annihilation": "meh",
+    "The Creator": "meh",
+    "Her": "disliked",
+    "Ghost in the Shell": "meh",
+    "The Man from Earth": "couldnt_finish",
+    "Rebel Moon: Part 2 \u2014 The Scargiver": "couldnt_finish"
+  },
+  "genre_mapping_summary": {
+    "Action": {
+      "plex_genres": [
+        "Action",
+        "Action Adventure",
+        "Action Adventure Comedy",
+        "Action Crime Drama",
+        "Action Fantasy",
+        "Action Fantasy SciFi",
+        "Action Stoner Comedy",
+        "Action Thriller",
+        "SciFi Action Thriller"
+      ],
+      "total_count": 143,
+      "film_genre": "Action"
+    },
+    "Drama": {
+      "plex_genres": [
+        "Drama"
+      ],
+      "total_count": 87,
+      "film_genre": "Drama"
+    },
+    "Adventure": {
+      "plex_genres": [
+        "Adventure",
+        "Adventure Biography"
+      ],
+      "total_count": 71,
+      "film_genre": "Adventure"
+    },
+    "Comedy": {
+      "plex_genres": [
+        "Action Comedy",
+        "Comedy",
+        "Comedy Fantasy",
+        "Comedy Western"
+      ],
+      "total_count": 66,
+      "film_genre": "Comedy"
+    },
+    "Thriller": {
+      "plex_genres": [
+        "SciFi Thriller",
+        "Thriller"
+      ],
+      "total_count": 49,
+      "film_genre": "Thriller"
+    },
+    "Science Fiction": {
+      "plex_genres": [
+        "Science Fiction"
+      ],
+      "total_count": 48,
+      "film_genre": "Science Fiction"
+    },
+    "Crime": {
+      "plex_genres": [
+        "Crime",
+        "Crime Comedy",
+        "Mystery"
+      ],
+      "total_count": 40,
+      "film_genre": "Mystery"
+    },
+    "Horror": {
+      "plex_genres": [
+        "Horror"
+      ],
+      "total_count": 36,
+      "film_genre": "Horror"
+    },
+    "Fantasy": {
+      "plex_genres": [
+        "Fantasy",
+        "Fantasy Adventure",
+        "Fantasy SciFi",
+        "Fantasy SciFi Action",
+        "SciFi Fantasy"
+      ],
+      "total_count": 16,
+      "film_genre": "Fantasy"
+    },
+    "Biography": {
+      "plex_genres": [
+        "Biography",
+        "Biography Crime"
+      ],
+      "total_count": 15,
+      "film_genre": "Biography"
+    },
+    "Documentary": {
+      "plex_genres": [
+        "Documentary",
+        "Documentary Sports"
+      ],
+      "total_count": 13,
+      "film_genre": "Documentary"
+    },
+    "Family": {
+      "plex_genres": [
+        "Family"
+      ],
+      "total_count": 11,
+      "film_genre": "Family"
+    },
+    "Romance": {
+      "plex_genres": [
+        "Romance"
+      ],
+      "total_count": 11,
+      "film_genre": "Romance"
+    },
+    "Music": {
+      "plex_genres": [
+        "Music"
+      ],
+      "total_count": 9,
+      "film_genre": "Music"
+    },
+    "Animation": {
+      "plex_genres": [
+        "Animation"
+      ],
+      "total_count": 8,
+      "film_genre": "Animation"
+    },
+    "Musical": {
+      "plex_genres": [
+        "Musical"
+      ],
+      "total_count": 8,
+      "film_genre": "Musical"
+    },
+    "History": {
+      "plex_genres": [
+        "History",
+        "History Drama"
+      ],
+      "total_count": 5,
+      "film_genre": "History"
+    },
+    "Sport": {
+      "plex_genres": [
+        "Sport"
+      ],
+      "total_count": 4,
+      "film_genre": "Sport"
+    },
+    "War": {
+      "plex_genres": [
+        "War"
+      ],
+      "total_count": 3,
+      "film_genre": "War"
+    },
+    "Short": {
+      "plex_genres": [
+        "Short"
+      ],
+      "total_count": 2,
+      "film_genre": "Short"
+    },
+    "Western": {
+      "plex_genres": [
+        "Western"
+      ],
+      "total_count": 2,
+      "film_genre": "Western"
+    },
+    "Drama-Sports": {
+      "plex_genres": [
+        "Drama-Sports"
+      ],
+      "total_count": 1,
+      "film_genre": "Drama-Sports"
+    }
+  }
+}
