@@ -5,12 +5,12 @@ description: >
   and personal ratings to suggest movies you'll actually enjoy. Supports
   both general recommendations (across all genres) and genre-specific 
   recommendations (within a single genre and its subgenres).
-version: 2.0.0
+version: 2.1.0
 author: Hermes
-tags: [media, plex, recommendations, multi-genre, film-taxonomy]
+tags: [media, plex, recommendations, multi-genre, film-taxonomy, dvds-releases]
 ---
 
-# Plex Recommendations v2.0
+# Plex Recommendations v2.1
 
 ## Connection Details
 
@@ -47,6 +47,22 @@ See `profiles.json` for the full profile with all genres, rating adjustments, an
 ## Two Recommendation Modes
 
 There are **two modes** for generating recommendations. The mode is determined by the user's request.
+
+### v2.1 New Release Integration (dvdsreleasedates.com)
+
+The recommendation engine now integrates with dvdsreleasedates.com to include newly released movies in recommendations:
+
+- `scrape_dvds_releases.py` — Scrapes digital and DVD releases from dvdsreleasedates.com
+  - Fetches current month's digital releases (`/digital-releases/YYYY/M`)
+  - Fetches yearly DVD releases (`/new-movies-YYYY/`)
+  - Scrapes genre pages for all major genres (Horror, Sci-Fi, Thriller, Action, Drama, Comedy, Crime, Mystery, Adventure, Fantasy)
+  - Merges digital + DVD releases with actual genre data from scraped pages
+  - Saves to `cache/dvds_releases.json` with title, IMDb rating, MPAA rating, and genres
+  - Cache is refreshed automatically if older than 7 days
+
+- Genre-aware filtering: When a user requests recommendations for a specific genre (e.g., "recommend horror"), the engine filters dvds releases by actual scraped genre data instead of keyword matching. This works reliably across ALL supported genres.
+
+- New releases are scored alongside web search results and included in final recommendations when they match the user's preferences and aren't already in their library.
 
 ### Mode 1: Cross-Genre (General / Broad)
 
@@ -244,6 +260,7 @@ curl -s "http://10.0.0.130:32400/status/sessions?X-Plex-Token=$(cat ~/.hermes/pr
 | `generate_profile.py` | Creates preference profile from library + ratings |
 | `generate_recommendations.py` | Generates cross-genre or genre-specific recommendations (`--genre` flag for specific) |
 | `parse_library.py` | Parses XML cache into structured JSON |
+| `scrape_dvds_releases.py` | Scrapes digital/DVD releases from dvdsreleasedates.com with genre data (v2.1) |
 
 ## File Structure
 
@@ -252,13 +269,16 @@ plex-recommendations/
 ├── SKILL.md                    # This file
 ├── cache/
 │   ├── movies.xml              # Cached Plex movie library
-│   └── tv.xml                  # Cached Plex TV show library
+│   ├── tv.xml                  # Cached Plex TV show library
+│   ├── dvds_releases.json      # Merged digital/DVD releases with genre data (v2.1)
+│   └── digital_releases.json   # Raw digital releases cache
 ├── profiles.json               # Generated preference profile (v2)
 ├── plex_to_wikipedia_genres.json  # Genre mapping (v2)
 ├── watched_movies.txt          # Movies watched + ratings
 ├── watch_list.txt              # Movies user wants to watch
 ├── map_genres.py               # Plex→Wikipedia genre mapper
 ├── generate_profile.py         # Preference profile generator
-├── generate_recommendations.py # Recommendation engine
-└── parse_library.py            # XML cache parser
+├── generate_recommendations.py # Recommendation engine (v2.1: includes dvds releases)
+├── parse_library.py            # XML cache parser
+└── scrape_dvds_releases.py     # dvdsreleasedates.com scraper (v2.1)
 ```
