@@ -5,7 +5,7 @@ description: >
   and personal ratings to suggest movies you'll actually enjoy. Supports
   both general recommendations (across all genres) and genre-specific 
   recommendations (within a single genre and its subgenres).
-version: 2.1.0
+version: 2.2.0
 author: Hermes
 tags: [media, plex, recommendations, multi-genre, film-taxonomy, dvds-releases]
 ---
@@ -63,6 +63,35 @@ The recommendation engine now integrates with dvdsreleasedates.com to include ne
 - Genre-aware filtering: When a user requests recommendations for a specific genre (e.g., "recommend horror"), the engine filters dvds releases by actual scraped genre data instead of keyword matching. This works reliably across ALL supported genres.
 
 - New releases are scored alongside web search results and included in final recommendations when they match the user's preferences and aren't already in their library.
+
+### v2.2 What's New — Monthly Release Tracker (NEW)
+
+The skill now includes a "What's New" feature that shows you what movies are newly available on digital this month, compared against your existing cache:
+
+- `scrape_whats_new.py` — Scrapes this month's digital releases and compares against the existing cache to find NEW titles
+  - Usage: `python3 scrape_whats_new.py` (this month's new releases)
+  - Usage: `python3 scrape_whats_new.py --month 6 --year 2026` (specific month)
+  - Usage: `python3 scrape_whats_new.py --all` (show all current releases, no comparison)
+  - Automatically adds genre data by scraping genre pages
+  - Sorts results by IMDb rating (highest first)
+  - Shows breakdown by genre
+  - Automatically updates the cache with new titles after comparison
+
+**How it works:**
+1. Scrapes dvdsreleasedates.com for this month's digital releases
+2. Loads existing `cache/dvds_releases.json` cache
+3. Compares titles — any title NOT in the existing cache is "new"
+4. Adds genre data by scraping genre pages
+5. Displays new titles sorted by IMDb rating with genres and MPAA ratings
+6. Merges new titles into the cache for future comparisons
+
+**User prompts that trigger this feature:**
+- "What's new on digital?"
+- "What movies are out this week?" (uses monthly data as best approximation)
+- "Show me new releases"
+- "What's coming out on digital?"
+
+**Behavior:** Run `python3 scrape_whats_new.py` and present the output to the user.
 
 ### Mode 1: Cross-Genre (General / Broad)
 
@@ -261,6 +290,7 @@ curl -s "http://10.0.0.130:32400/status/sessions?X-Plex-Token=$(cat ~/.hermes/pr
 | `generate_recommendations.py` | Generates cross-genre or genre-specific recommendations (`--genre` flag for specific) |
 | `parse_library.py` | Parses XML cache into structured JSON |
 | `scrape_dvds_releases.py` | Scrapes digital/DVD releases from dvdsreleasedates.com with genre data (v2.1) |
+| `scrape_whats_new.py` | What's New — compares this month's digital releases against cache to find new titles (v2.2) |
 
 ## File Structure
 
@@ -280,5 +310,6 @@ plex-recommendations/
 ├── generate_profile.py         # Preference profile generator
 ├── generate_recommendations.py # Recommendation engine (v2.1: includes dvds releases)
 ├── parse_library.py            # XML cache parser
-└── scrape_dvds_releases.py     # dvdsreleasedates.com scraper (v2.1)
+├── scrape_dvds_releases.py     # dvdsreleasedates.com scraper (v2.1)
+└── scrape_whats_new.py         # What's New — monthly release tracker (v2.2)
 ```
